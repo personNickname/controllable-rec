@@ -112,22 +112,22 @@
                         <p data-i18n="dimensions.user_desc">How to steer recommendations based on what the user wants.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
-                                <h4>Explicit Intent</h4>
-                                <p>Natural language instructions → OxygenREC, InstructRec</p>
-                                <p>Prompt templates → P5</p>
+                                <h4 data-i18n="user.explicit">Explicit Intent</h4>
+                                <p data-i18n="user.explicit_1">Natural language instructions → OxygenREC, InstructRec</p>
+                                <p data-i18n="user.explicit_2">Prompt templates → P5</p>
                             </div>
                             <div class="subdim">
-                                <h4>Implicit Preference</h4>
-                                <p>Preference pairs (DPO) → DPO, RankGR</p>
-                                <p>Sequential patterns → TIGER, GPR</p>
+                                <h4 data-i18n="user.implicit">Implicit Preference</h4>
+                                <p data-i18n="user.implicit_1">Preference pairs (DPO) → DPO, RankGR</p>
+                                <p data-i18n="user.implicit_2">Sequential patterns → TIGER, GPR</p>
                             </div>
                             <div class="subdim">
-                                <h4>Multi-Interest</h4>
-                                <p>Multi-head prediction → GPR, OneRanker</p>
-                                <p>Beam diversity → PROMISE</p>
+                                <h4 data-i18n="user.multi">Multi-Interest</h4>
+                                <p data-i18n="user.multi_1">Multi-head prediction → GPR, OneRanker</p>
+                                <p data-i18n="user.multi_2">Beam diversity → PROMISE</p>
                             </div>
                         </div>
-                        <div class="insight">Key Insight: OxygenREC's Contextual Reasoning Instructions bridge natural language to generative backbone.</div>
+                        <div class="insight" data-i18n="user.insight">Key Insight: OxygenREC's Contextual Reasoning Instructions bridge natural language to generative backbone.</div>
                     </div>
                 </div>
 
@@ -137,17 +137,17 @@
                         <p data-i18n="dimensions.item_desc">How to steer recommendations based on item properties.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
-                                <h4>Semantic Similarity</h4>
-                                <p>Hierarchical Semantic IDs → TIGER, GPR</p>
-                                <p>Context-aware tokenization → ActionPiece</p>
+                                <h4 data-i18n="item.semantic">Semantic Similarity</h4>
+                                <p data-i18n="item.semantic_1">Hierarchical Semantic IDs → TIGER, GPR</p>
+                                <p data-i18n="item.semantic_2">Context-aware tokenization → ActionPiece</p>
                             </div>
                             <div class="subdim">
-                                <h4>Attribute Match</h4>
-                                <p>Constrained decoding → GRank</p>
-                                <p class="gap">Gap: Explicit attribute control unexplored</p>
+                                <h4 data-i18n="item.attribute">Attribute Match</h4>
+                                <p data-i18n="item.attribute_1">Constrained decoding → GRank</p>
+                                <p class="gap" data-i18n="item.attribute_gap">Gap: Explicit attribute control unexplored</p>
                             </div>
                         </div>
-                        <div class="insight">Key Insight: Semantic ID hierarchy enables coarse-to-fine control.</div>
+                        <div class="insight" data-i18n="item.insight">Key Insight: Semantic ID hierarchy enables coarse-to-fine control.</div>
                     </div>
                 </div>
 
@@ -157,18 +157,18 @@
                         <p data-i18n="dimensions.business_desc">How to steer recommendations for platform objectives.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
-                                <h4>Value Optimization</h4>
-                                <p>Value-aware fine-tuning → GPR</p>
-                                <p>Task decoupling → OneRanker</p>
-                                <p>Hierarchical DPO → RankGR</p>
+                                <h4 data-i18n="biz.value">Value Optimization</h4>
+                                <p data-i18n="biz.value_1">Value-aware fine-tuning → GPR</p>
+                                <p data-i18n="biz.value_2">Task decoupling → OneRanker</p>
+                                <p data-i18n="biz.value_3">Hierarchical DPO → RankGR</p>
                             </div>
                             <div class="subdim">
-                                <h4>Diversity/Fairness</h4>
-                                <p>Beam diversity → PROMISE</p>
-                                <p class="gap">Gap: Fairness in GR is underexplored</p>
+                                <h4 data-i18n="biz.diversity">Diversity/Fairness</h4>
+                                <p data-i18n="biz.diversity_1">Beam diversity → PROMISE</p>
+                                <p class="gap" data-i18n="biz.diversity_gap">Gap: Fairness in GR is underexplored</p>
                             </div>
                         </div>
-                        <div class="insight">Key Insight: OneRanker separates interest from value optimization via task tokens.</div>
+                        <div class="insight" data-i18n="biz.insight">Key Insight: OneRanker separates interest from value optimization via task tokens.</div>
                     </div>
                 </div>
 
@@ -178,18 +178,18 @@
                         <p data-i18n="dimensions.interaction_desc">How control is applied and communicated.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
-                                <h4>Control Timing</h4>
-                                <p>Pre-generation → OxygenREC, P5</p>
-                                <p>Mid-generation (PRM) → PROMISE</p>
-                                <p>Post-generation → RankGR, GRank</p>
+                                <h4 data-i18n="int.timing">Control Timing</h4>
+                                <p data-i18n="int.timing_1">Pre-generation → OxygenREC, P5</p>
+                                <p data-i18n="int.timing_2">Mid-generation (PRM) → PROMISE</p>
+                                <p data-i18n="int.timing_3">Post-generation → RankGR, GRank</p>
                             </div>
                             <div class="subdim">
-                                <h4>Explainability</h4>
-                                <p>Prompt-based explanation → PEPLER</p>
-                                <p class="gap">Gap: Explaining Semantic ID paths unexplored</p>
+                                <h4 data-i18n="int.explain">Explainability</h4>
+                                <p data-i18n="int.explain_1">Prompt-based explanation → PEPLER</p>
+                                <p class="gap" data-i18n="int.explain_gap">Gap: Explaining Semantic ID paths unexplored</p>
                             </div>
                         </div>
-                        <div class="insight">Key Insight: PROMISE applies control at every step via Process Reward Model.</div>
+                        <div class="insight" data-i18n="int.insight">Key Insight: PROMISE applies control at every step via Process Reward Model.</div>
                     </div>
                 </div>
             </div>
@@ -202,62 +202,62 @@
 
                 <div class="mechanism-grid">
                     <div class="mechanism-card">
-                        <span class="mechanism__stage">Input</span>
-                        <h3>Conditioning</h3>
-                        <p>Prepending tokens, instructions, or embeddings to steer generation.</p>
+                        <span class="mechanism__stage" data-i18n="stage.input">Input</span>
+                        <h3 data-i18n="mech.conditioning">Conditioning</h3>
+                        <p data-i18n="mech.cond_desc">Prepending tokens, instructions, or embeddings to steer generation.</p>
                         <ul>
-                            <li><strong>Control Tokens</strong> — OxygenREC, OneRanker</li>
-                            <li><strong>Natural Language</strong> — InstructRec, P5</li>
-                            <li><strong>Embedding Injection</strong> — CoLLM, LLaRA</li>
+                            <li><strong data-i18n="mech.cond_1">Control Tokens</strong> — OxygenREC, OneRanker</li>
+                            <li><strong data-i18n="mech.cond_2">Natural Language</strong> — InstructRec, P5</li>
+                            <li><strong data-i18n="mech.cond_3">Embedding Injection</strong> — CoLLM, LLaRA</li>
                         </ul>
                     </div>
 
                     <div class="mechanism-card">
-                        <span class="mechanism__stage">Encoding</span>
-                        <h3>Latent Manipulation</h3>
-                        <p>Editing discrete codes or latent representations.</p>
+                        <span class="mechanism__stage" data-i18n="stage.encoding">Encoding</span>
+                        <h3 data-i18n="mech.latent">Latent Manipulation</h3>
+                        <p data-i18n="mech.lat_desc">Editing discrete codes or latent representations.</p>
                         <ul>
-                            <li><strong>Hierarchical Editing</strong> — TIGER, GPR</li>
-                            <li><strong>Code Composition</strong> — RQ-VAE</li>
-                            <li><strong>Context-Aware Tokenization</strong> — ActionPiece</li>
+                            <li><strong data-i18n="mech.lat_1">Hierarchical Editing</strong> — TIGER, GPR</li>
+                            <li><strong data-i18n="mech.lat_2">Code Composition</strong> — RQ-VAE</li>
+                            <li><strong data-i18n="mech.lat_3">Context-Aware Tokenization</strong> — ActionPiece</li>
                         </ul>
                     </div>
 
                     <div class="mechanism-card">
-                        <span class="mechanism__stage">Training</span>
-                        <h3>Preference Optimization</h3>
-                        <p>Aligning generation with preferences via DPO/RLHF.</p>
+                        <span class="mechanism__stage" data-i18n="stage.training">Training</span>
+                        <h3 data-i18n="mech.preference">Preference Optimization</h3>
+                        <p data-i18n="mech.pref_desc">Aligning generation with preferences via DPO/RLHF.</p>
                         <ul>
                             <li><strong>DPO</strong> — DPO, RankGR</li>
                             <li><strong>RLHF / HEPO</strong> — GPR</li>
-                            <li><strong>Value-Aware Training</strong> — GPR</li>
+                            <li><strong data-i18n="mech.pref_3">Value-Aware Training</strong> — GPR</li>
                         </ul>
                     </div>
 
                     <div class="mechanism-card">
-                        <span class="mechanism__stage">Generation</span>
-                        <h3>Constrained Decoding</h3>
-                        <p>Steering output via PRM guidance during inference.</p>
+                        <span class="mechanism__stage" data-i18n="stage.generation">Generation</span>
+                        <h3 data-i18n="mech.decoding">Constrained Decoding</h3>
+                        <p data-i18n="mech.dec_desc">Steering output via PRM guidance during inference.</p>
                         <ul>
-                            <li><strong>Process Reward Model</strong> — PROMISE</li>
-                            <li><strong>Guided Beam Search</strong> — PROMISE</li>
-                            <li><strong>Refined Scoring</strong> — RankGR, GRank</li>
+                            <li><strong data-i18n="mech.dec_1">Process Reward Model</strong> — PROMISE</li>
+                            <li><strong data-i18n="mech.dec_2">Guided Beam Search</strong> — PROMISE</li>
+                            <li><strong data-i18n="mech.dec_3">Refined Scoring</strong> — RankGR, GRank</li>
                         </ul>
                     </div>
 
                     <div class="mechanism-card mechanism-card--wide">
-                        <span class="mechanism__stage">Architecture</span>
-                        <h3>Multi-Objective Control</h3>
-                        <p>Balancing conflicting objectives through task tokens, separate heads, or Pareto optimization.</p>
+                        <span class="mechanism__stage" data-i18n="stage.architecture">Architecture</span>
+                        <h3 data-i18n="mech.multi">Multi-Objective Control</h3>
+                        <p data-i18n="mech.multi_desc">Balancing conflicting objectives through task tokens, separate heads, or Pareto optimization.</p>
                         <div class="mechanism__methods">
-                            <span class="tag">Task Tokens — OneRanker</span>
-                            <span class="tag">Multi-Head — GPR</span>
-                            <span class="tag">Decoupled Training — OneRanker</span>
+                            <span class="tag" data-i18n="mech.multi_1">Task Tokens — OneRanker</span>
+                            <span class="tag" data-i18n="mech.multi_2">Multi-Head — GPR</span>
+                            <span class="tag" data-i18n="mech.multi_3">Decoupled Training — OneRanker</span>
                         </div>
                         <div class="mechanism__tradeoffs">
-                            <span class="tradeoff">Interest vs Value</span>
-                            <span class="tradeoff">Diversity vs Relevance</span>
-                            <span class="tradeoff">Short-term vs Long-term</span>
+                            <span class="tradeoff" data-i18n="mech.trade_1">Interest vs Value</span>
+                            <span class="tradeoff" data-i18n="mech.trade_2">Diversity vs Relevance</span>
+                            <span class="tradeoff" data-i18n="mech.trade_3">Short-term vs Long-term</span>
                         </div>
                     </div>
                 </div>
@@ -320,52 +320,52 @@
 
                 <div class="gaps-grid">
                     <div class="gap-card gap-card--high">
-                        <span class="gap__priority">High Impact</span>
-                        <h3>Explicit Attribute Control</h3>
-                        <p>"Show me items with attribute X and price < Y"</p>
+                        <span class="gap__priority" data-i18n="gap.high">High Impact</span>
+                        <h3 data-i18n="gap.attr_title">Explicit Attribute Control</h3>
+                        <p data-i18n="gap.attr_desc">"Show me items with attribute X and price < Y"</p>
                         <div class="gap__meta">
-                            <span class="difficulty difficulty--medium">Medium Difficulty</span>
-                            <span>3-5 papers needed</span>
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span data-i18n="gap.papers_3_5">3-5 papers needed</span>
                         </div>
                     </div>
 
                     <div class="gap-card gap-card--high">
-                        <span class="gap__priority">High Impact</span>
-                        <h3>Diversity and Fairness</h3>
-                        <p>Fair exposure across items/creators in generative recommendation.</p>
+                        <span class="gap__priority" data-i18n="gap.high">High Impact</span>
+                        <h3 data-i18n="gap.fair_title">Diversity and Fairness</h3>
+                        <p data-i18n="gap.fair_desc">Fair exposure across items/creators in generative recommendation.</p>
                         <div class="gap__meta">
-                            <span class="difficulty difficulty--high">High Difficulty</span>
-                            <span>5-7 papers needed</span>
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.papers_5_7">5-7 papers needed</span>
                         </div>
                     </div>
 
                     <div class="gap-card gap-card--medium">
-                        <span class="gap__priority">Medium Impact</span>
-                        <h3>Real-Time Feedback Loop</h3>
-                        <p>"Not this, more like that" in real-time.</p>
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.feedback_title">Real-Time Feedback Loop</h3>
+                        <p data-i18n="gap.feedback_desc">"Not this, more like that" in real-time.</p>
                         <div class="gap__meta">
-                            <span class="difficulty difficulty--high">High Difficulty</span>
-                            <span>3-5 papers needed</span>
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.papers_3_5">3-5 papers needed</span>
                         </div>
                     </div>
 
                     <div class="gap-card gap-card--medium">
-                        <span class="gap__priority">Medium Impact</span>
-                        <h3>Explainable Control</h3>
-                        <p>Why did the model generate this Semantic ID sequence?</p>
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.explain_title">Explainable Control</h3>
+                        <p data-i18n="gap.explain_desc">Why did the model generate this Semantic ID sequence?</p>
                         <div class="gap__meta">
-                            <span class="difficulty difficulty--medium">Medium Difficulty</span>
-                            <span>3-5 papers needed</span>
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span data-i18n="gap.papers_3_5">3-5 papers needed</span>
                         </div>
                     </div>
 
                     <div class="gap-card gap-card--high">
-                        <span class="gap__priority">High Impact</span>
-                        <h3>Multi-Stakeholder Balance</h3>
-                        <p>Balancing user, business, and creator objectives.</p>
+                        <span class="gap__priority" data-i18n="gap.high">High Impact</span>
+                        <h3 data-i18n="gap.stake_title">Multi-Stakeholder Balance</h3>
+                        <p data-i18n="gap.stake_desc">Balancing user, business, and creator objectives.</p>
                         <div class="gap__meta">
-                            <span class="difficulty difficulty--high">High Difficulty</span>
-                            <span>5-7 papers needed</span>
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.papers_5_7">5-7 papers needed</span>
                         </div>
                     </div>
                 </div>

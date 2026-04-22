@@ -14,36 +14,40 @@
     <header class="header header--left">
         <a href="/" class="header__logo">Controllable Rec</a>
         <nav class="header__nav">
-            <a href="#overview">Overview</a>
-            <a href="#dimensions">Dimensions</a>
-            <a href="#mechanisms">Mechanisms</a>
-            <a href="#papers">Papers</a>
-            <a href="#gaps">Gaps</a>
+            <a href="#overview" data-i18n="nav.overview">Overview</a>
+            <a href="#dimensions" data-i18n="nav.dimensions">Dimensions</a>
+            <a href="#mechanisms" data-i18n="nav.mechanisms">Mechanisms</a>
+            <a href="#papers" data-i18n="nav.papers">Papers</a>
+            <a href="#gaps" data-i18n="nav.gaps">Gaps</a>
         </nav>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
         <button class="header__menu" aria-label="Menu">☰</button>
     </header>
 
     <!-- Hero: Modern gradient with stats -->
     <section class="hero">
         <div class="hero__content">
-            <h1>Controllable Recommendation Generation</h1>
-            <p class="hero__tagline">A taxonomy and research synthesis of control mechanisms in generative recommendation systems</p>
+            <h1 data-i18n="hero.title">Controllable Recommendation Generation</h1>
+            <p class="hero__tagline" data-i18n="hero.tagline">A taxonomy and research synthesis of control mechanisms in generative recommendation systems</p>
             <div class="hero__stats">
                 <div class="stat">
                     <span class="stat__number">4</span>
-                    <span class="stat__label">Dimensions</span>
+                    <span class="stat__label" data-i18n="hero.dimensions">Dimensions</span>
                 </div>
                 <div class="stat">
                     <span class="stat__number">5</span>
-                    <span class="stat__label">Mechanisms</span>
+                    <span class="stat__label" data-i18n="hero.mechanisms">Mechanisms</span>
                 </div>
                 <div class="stat">
                     <span class="stat__number">19</span>
-                    <span class="stat__label">Papers</span>
+                    <span class="stat__label" data-i18n="hero.papers">Papers</span>
                 </div>
                 <div class="stat">
                     <span class="stat__number">5</span>
-                    <span class="stat__label">Gaps</span>
+                    <span class="stat__label" data-i18n="hero.gaps">Gaps</span>
                 </div>
             </div>
         </div>
@@ -53,36 +57,36 @@
         <!-- Overview Section -->
         <section id="overview" class="section">
             <div class="container">
-                <h2 class="section__title">Overview</h2>
-                <p class="section__intro">How can we steer what a generative recommender produces? This taxonomy covers user preferences, item attributes, business objectives, and interaction patterns.</p>
+                <h2 class="section__title" data-i18n="overview.title">Overview</h2>
+                <p class="section__intro" data-i18n="overview.intro">How can we steer what a generative recommender produces? This taxonomy covers user preferences, item attributes, business objectives, and interaction patterns.</p>
 
                 <div class="cards-grid">
                     <div class="card">
-                        <h3>Taxonomy Framework</h3>
+                        <h3 data-i18n="overview.framework">Taxonomy Framework</h3>
                         <table class="table">
                             <thead>
-                                <tr><th>Dimension</th><th>Question</th></tr>
+                                <tr><th data-i18n="overview.dimension">Dimension</th><th data-i18n="overview.question">Question</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><strong>User</strong></td><td>What does the user want?</td></tr>
-                                <tr><td><strong>Item</strong></td><td>What properties should items have?</td></tr>
-                                <tr><td><strong>Business</strong></td><td>What does the platform optimize?</td></tr>
-                                <tr><td><strong>Interaction</strong></td><td>How is control applied?</td></tr>
+                                <tr><td><strong data-i18n="dim.user">User</strong></td><td data-i18n="dim.user_q">What does the user want?</td></tr>
+                                <tr><td><strong data-i18n="dim.item">Item</strong></td><td data-i18n="dim.item_q">What properties should items have?</td></tr>
+                                <tr><td><strong data-i18n="dim.business">Business</strong></td><td data-i18n="dim.business_q">What does the platform optimize?</td></tr>
+                                <tr><td><strong data-i18n="dim.interaction">Interaction</strong></td><td data-i18n="dim.interaction_q">How is control applied?</td></tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="card">
-                        <h3>Control Mechanisms</h3>
+                        <h3 data-i18n="overview.mechanisms">Control Mechanisms</h3>
                         <table class="table">
                             <thead>
-                                <tr><th>Mechanism</th><th>Stage</th></tr>
+                                <tr><th data-i18n="overview.mechanism">Mechanism</th><th data-i18n="overview.stage">Stage</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Conditioning</td><td>Input</td></tr>
-                                <tr><td>Latent Manipulation</td><td>Encoding</td></tr>
-                                <tr><td>Preference Optimization</td><td>Training</td></tr>
-                                <tr><td>Constrained Decoding</td><td>Generation</td></tr>
-                                <tr><td>Multi-Objective</td><td>Architecture</td></tr>
+                                <tr><td data-i18n="mech.conditioning">Conditioning</td><td data-i18n="stage.input">Input</td></tr>
+                                <tr><td data-i18n="mech.latent">Latent Manipulation</td><td data-i18n="stage.encoding">Encoding</td></tr>
+                                <tr><td data-i18n="mech.preference">Preference Optimization</td><td data-i18n="stage.training">Training</td></tr>
+                                <tr><td data-i18n="mech.decoding">Constrained Decoding</td><td data-i18n="stage.generation">Generation</td></tr>
+                                <tr><td data-i18n="mech.multi">Multi-Objective</td><td data-i18n="stage.architecture">Architecture</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -93,19 +97,19 @@
         <!-- Dimensions Section -->
         <section id="dimensions" class="section section--alt">
             <div class="container">
-                <h2 class="section__title">Control Dimensions</h2>
+                <h2 class="section__title" data-i18n="dimensions.title">Control Dimensions</h2>
 
                 <div class="tabs">
-                    <button class="tab active" data-tab="user">User Control</button>
-                    <button class="tab" data-tab="item">Item Control</button>
-                    <button class="tab" data-tab="business">Business Control</button>
-                    <button class="tab" data-tab="interaction">Interaction Control</button>
+                    <button class="tab active" data-tab="user" data-i18n="dimensions.user_tab">User Control</button>
+                    <button class="tab" data-tab="item" data-i18n="dimensions.item_tab">Item Control</button>
+                    <button class="tab" data-tab="business" data-i18n="dimensions.business_tab">Business Control</button>
+                    <button class="tab" data-tab="interaction" data-i18n="dimensions.interaction_tab">Interaction Control</button>
                 </div>
 
                 <div class="tab-panel active" id="panel-user">
                     <div class="dimension">
-                        <h3>User Control (Demand-Side)</h3>
-                        <p>How to steer recommendations based on what the user wants.</p>
+                        <h3 data-i18n="dimensions.user_title">User Control (Demand-Side)</h3>
+                        <p data-i18n="dimensions.user_desc">How to steer recommendations based on what the user wants.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4>Explicit Intent</h4>
@@ -129,8 +133,8 @@
 
                 <div class="tab-panel" id="panel-item">
                     <div class="dimension">
-                        <h3>Item Control (Supply-Side)</h3>
-                        <p>How to steer recommendations based on item properties.</p>
+                        <h3 data-i18n="dimensions.item_title">Item Control (Supply-Side)</h3>
+                        <p data-i18n="dimensions.item_desc">How to steer recommendations based on item properties.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4>Semantic Similarity</h4>
@@ -149,8 +153,8 @@
 
                 <div class="tab-panel" id="panel-business">
                     <div class="dimension">
-                        <h3>Business Control (Platform-Side)</h3>
-                        <p>How to steer recommendations for platform objectives.</p>
+                        <h3 data-i18n="dimensions.business_title">Business Control (Platform-Side)</h3>
+                        <p data-i18n="dimensions.business_desc">How to steer recommendations for platform objectives.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4>Value Optimization</h4>
@@ -170,8 +174,8 @@
 
                 <div class="tab-panel" id="panel-interaction">
                     <div class="dimension">
-                        <h3>Interaction Control (Interface-Side)</h3>
-                        <p>How control is applied and communicated.</p>
+                        <h3 data-i18n="dimensions.interaction_title">Interaction Control (Interface-Side)</h3>
+                        <p data-i18n="dimensions.interaction_desc">How control is applied and communicated.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4>Control Timing</h4>
@@ -194,7 +198,7 @@
         <!-- Mechanisms Section -->
         <section id="mechanisms" class="section">
             <div class="container">
-                <h2 class="section__title">Control Mechanisms</h2>
+                <h2 class="section__title" data-i18n="mechanisms.title">Control Mechanisms</h2>
 
                 <div class="mechanism-grid">
                     <div class="mechanism-card">
@@ -263,8 +267,8 @@
         <!-- Papers Section -->
         <section id="papers" class="section section--alt">
             <div class="container">
-                <h2 class="section__title">Paper Mapping</h2>
-                <p class="section__intro">19 papers mapped to the taxonomy. Highlighted rows indicate comprehensive coverage.</p>
+                <h2 class="section__title" data-i18n="papers.title">Paper Mapping</h2>
+                <p class="section__intro" data-i18n="papers.intro">19 papers mapped to the taxonomy. Highlighted rows indicate comprehensive coverage.</p>
 
                 <div class="table-wrapper">
                     <table class="table paper-matrix">
@@ -311,8 +315,8 @@
         <!-- Gaps Section -->
         <section id="gaps" class="section">
             <div class="container">
-                <h2 class="section__title">Research Gaps</h2>
-                <p class="section__intro">Open problems and future research directions.</p>
+                <h2 class="section__title" data-i18n="gaps.title">Research Gaps</h2>
+                <p class="section__intro" data-i18n="gaps.intro">Open problems and future research directions.</p>
 
                 <div class="gaps-grid">
                     <div class="gap-card gap-card--high">
@@ -372,9 +376,9 @@
     <!-- Footer: Social Links -->
     <footer class="footer footer--social">
         <div class="container">
-            <p class="footer__title">Controllable Recommendation Generation</p>
-            <p class="footer__subtitle">Research Synthesis</p>
-            <p class="footer__copy">&copy; 2026 · Last updated April 22</p>
+            <p class="footer__title" data-i18n="footer.title">Controllable Recommendation Generation</p>
+            <p class="footer__subtitle" data-i18n="footer.subtitle">Research Synthesis</p>
+            <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 · Last updated April 22</p>
         </div>
     </footer>
 

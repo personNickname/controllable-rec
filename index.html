@@ -42,7 +42,7 @@
                     <span class="stat__label" data-i18n="hero.mechanisms">Mechanisms</span>
                 </div>
                 <div class="stat">
-                    <span class="stat__number">19</span>
+                    <span class="stat__number">70+</span>
                     <span class="stat__label" data-i18n="hero.papers">Papers</span>
                 </div>
                 <div class="stat">
@@ -206,9 +206,10 @@
                         <h3 data-i18n="mech.conditioning">Conditioning</h3>
                         <p data-i18n="mech.cond_desc">Prepending tokens, instructions, or embeddings to steer generation.</p>
                         <ul>
-                            <li><strong data-i18n="mech.cond_1">Control Tokens</strong> — OxygenREC, OneRanker</li>
-                            <li><strong data-i18n="mech.cond_2">Natural Language</strong> — InstructRec, P5</li>
-                            <li><strong data-i18n="mech.cond_3">Embedding Injection</strong> — CoLLM, LLaRA</li>
+                            <li><strong data-i18n="mech.cond_1">Control Tokens</strong> — OxygenREC, OneRanker, NEO</li>
+                            <li><strong data-i18n="mech.cond_2">Instruction Following</strong> — SIGMA, InstructRec, P5, ITDR</li>
+                            <li><strong data-i18n="mech.cond_3">Embedding Injection</strong> — CoLLM, LLaRA, AlphaFuse, MME-SID</li>
+                            <li><strong data-i18n="mech.cond_4">Prompt Tuning</strong> — Rec-R1, GRLM, LLMXRec</li>
                         </ul>
                     </div>
 
@@ -217,9 +218,10 @@
                         <h3 data-i18n="mech.latent">Latent Manipulation</h3>
                         <p data-i18n="mech.lat_desc">Editing discrete codes or latent representations.</p>
                         <ul>
-                            <li><strong data-i18n="mech.lat_1">Hierarchical Editing</strong> — TIGER, GPR</li>
-                            <li><strong data-i18n="mech.lat_2">Code Composition</strong> — RQ-VAE</li>
-                            <li><strong data-i18n="mech.lat_3">Context-Aware Tokenization</strong> — ActionPiece</li>
+                            <li><strong data-i18n="mech.lat_1">Semantic IDs</strong> — TIGER, GPR, PLUM, DAS, SIDE</li>
+                            <li><strong data-i18n="mech.lat_2">RQ-VAE Variants</strong> — DQRec, MMGRec, PRISM, DOS</li>
+                            <li><strong data-i18n="mech.lat_3">Context-Aware</strong> — ActionPiece, CoFiRec, HiD-VAE</li>
+                            <li><strong data-i18n="mech.lat_4">Cross-Modal</strong> — MACRec, GateSID, LMIndexer</li>
                         </ul>
                     </div>
 
@@ -228,20 +230,21 @@
                         <h3 data-i18n="mech.preference">Preference Optimization</h3>
                         <p data-i18n="mech.pref_desc">Aligning generation with preferences via DPO/RLHF.</p>
                         <ul>
-                            <li><strong>DPO</strong> — DPO, RankGR</li>
-                            <li><strong>RLHF / HEPO</strong> — GPR</li>
-                            <li><strong data-i18n="mech.pref_3">Value-Aware Training</strong> — GPR</li>
+                            <li><strong>DPO</strong> — RankGR, RoDPO, CausalDPO, LPO4Rec, HaNoRec</li>
+                            <li><strong>RLHF</strong> — GPR (HEPO), Rec-R1, ReRec, RLHS</li>
+                            <li><strong data-i18n="mech.pref_3">Reward Modeling</strong> — WRO, SIDReasoner, ReRe</li>
                         </ul>
                     </div>
 
                     <div class="mechanism-card">
                         <span class="mechanism__stage" data-i18n="stage.generation">Generation</span>
                         <h3 data-i18n="mech.decoding">Constrained Decoding</h3>
-                        <p data-i18n="mech.dec_desc">Steering output via PRM guidance during inference.</p>
+                        <p data-i18n="mech.dec_desc">Steering output via PRM/ORM guidance during inference.</p>
                         <ul>
-                            <li><strong data-i18n="mech.dec_1">Process Reward Model</strong> — PROMISE</li>
-                            <li><strong data-i18n="mech.dec_2">Guided Beam Search</strong> — PROMISE</li>
-                            <li><strong data-i18n="mech.dec_3">Refined Scoring</strong> — RankGR, GRank</li>
+                            <li><strong data-i18n="mech.dec_1">Process Reward</strong> — PROMISE, ChatShopBuddy, DC-W2S</li>
+                            <li><strong data-i18n="mech.dec_4">Outcome Reward</strong> — SIDReasoner, SubSearch, ReflectRM</li>
+                            <li><strong data-i18n="mech.dec_2">Guided Beam Search</strong> — UniRec, NEO, MindRec, HSRL</li>
+                            <li><strong data-i18n="mech.dec_3">Refined Scoring</strong> — RankGR, GRank, Target-constrained</li>
                         </ul>
                     </div>
 
@@ -250,14 +253,15 @@
                         <h3 data-i18n="mech.multi">Multi-Objective Control</h3>
                         <p data-i18n="mech.multi_desc">Balancing conflicting objectives through task tokens, separate heads, or Pareto optimization.</p>
                         <div class="mechanism__methods">
-                            <span class="tag" data-i18n="mech.multi_1">Task Tokens — OneRanker</span>
-                            <span class="tag" data-i18n="mech.multi_2">Multi-Head — GPR</span>
-                            <span class="tag" data-i18n="mech.multi_3">Decoupled Training — OneRanker</span>
+                            <span class="tag" data-i18n="mech.multi_1">Task Tokens — OneRanker, SIGMA</span>
+                            <span class="tag" data-i18n="mech.multi_2">Multi-Head — GPR, DRGrad, SMES</span>
+                            <span class="tag" data-i18n="mech.multi_3">Pareto — PreferRec, Deep Pareto RL, AutoCDSR</span>
                         </div>
                         <div class="mechanism__tradeoffs">
                             <span class="tradeoff" data-i18n="mech.trade_1">Interest vs Value</span>
                             <span class="tradeoff" data-i18n="mech.trade_2">Diversity vs Relevance</span>
                             <span class="tradeoff" data-i18n="mech.trade_3">Short-term vs Long-term</span>
+                            <span class="tradeoff" data-i18n="mech.trade_4">Accuracy vs Fairness</span>
                         </div>
                     </div>
                 </div>

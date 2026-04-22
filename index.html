@@ -46,7 +46,7 @@
                     <span class="stat__label" data-i18n="hero.papers">Papers</span>
                 </div>
                 <div class="stat">
-                    <span class="stat__number">5</span>
+                    <span class="stat__number">10</span>
                     <span class="stat__label" data-i18n="hero.gaps">Gaps</span>
                 </div>
             </div>
@@ -322,50 +322,100 @@
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.attr_title">Explicit Attribute Control</h3>
-                        <p data-i18n="gap.attr_desc">"Show me items with attribute X and price < Y"</p>
+                        <p data-i18n="gap.attr_desc">"Show me items with attribute X and price < Y" — fine-grained attribute specification unexplored.</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
-                            <span data-i18n="gap.papers_3_5">3-5 papers needed</span>
+                            <span data-i18n="gap.no_papers">No papers yet</span>
                         </div>
                     </div>
 
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.fair_title">Diversity and Fairness</h3>
-                        <p data-i18n="gap.fair_desc">Fair exposure across items/creators in generative recommendation.</p>
+                        <p data-i18n="gap.fair_desc">Does autoregressive generation amplify popularity bias? How to enforce exposure equity?</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
-                            <span data-i18n="gap.papers_5_7">5-7 papers needed</span>
-                        </div>
-                    </div>
-
-                    <div class="gap-card gap-card--medium">
-                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
-                        <h3 data-i18n="gap.feedback_title">Real-Time Feedback Loop</h3>
-                        <p data-i18n="gap.feedback_desc">"Not this, more like that" in real-time.</p>
-                        <div class="gap__meta">
-                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
-                            <span data-i18n="gap.papers_3_5">3-5 papers needed</span>
-                        </div>
-                    </div>
-
-                    <div class="gap-card gap-card--medium">
-                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
-                        <h3 data-i18n="gap.explain_title">Explainable Control</h3>
-                        <p data-i18n="gap.explain_desc">Why did the model generate this Semantic ID sequence?</p>
-                        <div class="gap__meta">
-                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
-                            <span data-i18n="gap.papers_3_5">3-5 papers needed</span>
+                            <span>PROMISE (partial)</span>
                         </div>
                     </div>
 
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.stake_title">Multi-Stakeholder Balance</h3>
-                        <p data-i18n="gap.stake_desc">Balancing user, business, and creator objectives.</p>
+                        <p data-i18n="gap.stake_desc">User, business, and creator objectives. Creator welfare is ignored in current systems.</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
-                            <span data-i18n="gap.papers_5_7">5-7 papers needed</span>
+                            <span>GPR, OneRanker (partial)</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority" data-i18n="gap.high">High Impact</span>
+                        <h3 data-i18n="gap.online_title">Online Learning for Semantic IDs</h3>
+                        <p data-i18n="gap.online_desc">How to update Semantic IDs with streaming data? Current systems require batch retraining.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.no_papers">No papers yet</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority" data-i18n="gap.high">High Impact</span>
+                        <h3 data-i18n="gap.stat_title">LLM Statistical Learning Limitation</h3>
+                        <p data-i18n="gap.stat_desc">LLMs struggle to learn collaborative signals due to strong semantic priors.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span>BIGRec</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.feedback_title">Real-Time Feedback Loop</h3>
+                        <p data-i18n="gap.feedback_desc">"Not this, more like that" — interactive refinement in real-time.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span>Chat-REC (limited)</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.explain_title">Explainable Generation Path</h3>
+                        <p data-i18n="gap.explain_desc">Why did the model choose this Semantic ID sequence? Generation path explanation unexplored.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span>PEPLER (final only)</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.drift_title">Semantic Drift in Hierarchy</h3>
+                        <p data-i18n="gap.drift_desc">Errors in high-level tokens propagate irreversibly into wrong semantic subspaces.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span>PROMISE (PRM)</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.cross_title">Cross-Domain Transfer</h3>
+                        <p data-i18n="gap.cross_desc">Can Semantic IDs trained in one domain transfer to another?</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.no_papers">No papers yet</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
+                        <h3 data-i18n="gap.loop_title">Loop Scaling for GenRec</h3>
+                        <p data-i18n="gap.loop_desc">Can LoopCTR's recursive computation apply to Semantic ID generation?</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span>LoopCTR, PROMISE</span>
                         </div>
                     </div>
                 </div>

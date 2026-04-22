@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllable Rec - Research Taxonomy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header: Logo Left -->
+    <header class="header header--left">
+        <a href="/" class="header__logo">Controllable Rec</a>
+        <nav class="header__nav">
+            <a href="#overview">Overview</a>
+            <a href="#dimensions">Dimensions</a>
+            <a href="#mechanisms">Mechanisms</a>
+            <a href="#papers">Papers</a>
+            <a href="#gaps">Gaps</a>
+        </nav>
+        <button class="header__menu" aria-label="Menu">☰</button>
+    </header>
+
+    <!-- Hero: Modern gradient with stats -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1>Controllable Recommendation Generation</h1>
+            <p class="hero__tagline">A taxonomy and research synthesis of control mechanisms in generative recommendation systems</p>
+            <div class="hero__stats">
+                <div class="stat">
+                    <span class="stat__number">4</span>
+                    <span class="stat__label">Dimensions</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">5</span>
+                    <span class="stat__label">Mechanisms</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">19</span>
+                    <span class="stat__label">Papers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">5</span>
+                    <span class="stat__label">Gaps</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section__title">Overview</h2>
+                <p class="section__intro">How can we steer what a generative recommender produces? This taxonomy covers user preferences, item attributes, business objectives, and interaction patterns.</p>
+
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Taxonomy Framework</h3>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Dimension</th><th>Question</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>User</strong></td><td>What does the user want?</td></tr>
+                                <tr><td><strong>Item</strong></td><td>What properties should items have?</td></tr>
+                                <tr><td><strong>Business</strong></td><td>What does the platform optimize?</td></tr>
+                                <tr><td><strong>Interaction</strong></td><td>How is control applied?</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <h3>Control Mechanisms</h3>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Mechanism</th><th>Stage</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Conditioning</td><td>Input</td></tr>
+                                <tr><td>Latent Manipulation</td><td>Encoding</td></tr>
+                                <tr><td>Preference Optimization</td><td>Training</td></tr>
+                                <tr><td>Constrained Decoding</td><td>Generation</td></tr>
+                                <tr><td>Multi-Objective</td><td>Architecture</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dimensions Section -->
+        <section id="dimensions" class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">Control Dimensions</h2>
+
+                <div class="tabs">
+                    <button class="tab active" data-tab="user">User Control</button>
+                    <button class="tab" data-tab="item">Item Control</button>
+                    <button class="tab" data-tab="business">Business Control</button>
+                    <button class="tab" data-tab="interaction">Interaction Control</button>
+                </div>
+
+                <div class="tab-panel active" id="panel-user">
+                    <div class="dimension">
+                        <h3>User Control (Demand-Side)</h3>
+                        <p>How to steer recommendations based on what the user wants.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4>Explicit Intent</h4>
+                                <p>Natural language instructions → OxygenREC, InstructRec</p>
+                                <p>Prompt templates → P5</p>
+                            </div>
+                            <div class="subdim">
+                                <h4>Implicit Preference</h4>
+                                <p>Preference pairs (DPO) → DPO, RankGR</p>
+                                <p>Sequential patterns → TIGER, GPR</p>
+                            </div>
+                            <div class="subdim">
+                                <h4>Multi-Interest</h4>
+                                <p>Multi-head prediction → GPR, OneRanker</p>
+                                <p>Beam diversity → PROMISE</p>
+                            </div>
+                        </div>
+                        <div class="insight">Key Insight: OxygenREC's Contextual Reasoning Instructions bridge natural language to generative backbone.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-item">
+                    <div class="dimension">
+                        <h3>Item Control (Supply-Side)</h3>
+                        <p>How to steer recommendations based on item properties.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4>Semantic Similarity</h4>
+                                <p>Hierarchical Semantic IDs → TIGER, GPR</p>
+                                <p>Context-aware tokenization → ActionPiece</p>
+                            </div>
+                            <div class="subdim">
+                                <h4>Attribute Match</h4>
+                                <p>Constrained decoding → GRank</p>
+                                <p class="gap">Gap: Explicit attribute control unexplored</p>
+                            </div>
+                        </div>
+                        <div class="insight">Key Insight: Semantic ID hierarchy enables coarse-to-fine control.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-business">
+                    <div class="dimension">
+                        <h3>Business Control (Platform-Side)</h3>
+                        <p>How to steer recommendations for platform objectives.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4>Value Optimization</h4>
+                                <p>Value-aware fine-tuning → GPR</p>
+                                <p>Task decoupling → OneRanker</p>
+                                <p>Hierarchical DPO → RankGR</p>
+                            </div>
+                            <div class="subdim">
+                                <h4>Diversity/Fairness</h4>
+                                <p>Beam diversity → PROMISE</p>
+                                <p class="gap">Gap: Fairness in GR is underexplored</p>
+                            </div>
+                        </div>
+                        <div class="insight">Key Insight: OneRanker separates interest from value optimization via task tokens.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-interaction">
+                    <div class="dimension">
+                        <h3>Interaction Control (Interface-Side)</h3>
+                        <p>How control is applied and communicated.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4>Control Timing</h4>
+                                <p>Pre-generation → OxygenREC, P5</p>
+                                <p>Mid-generation (PRM) → PROMISE</p>
+                                <p>Post-generation → RankGR, GRank</p>
+                            </div>
+                            <div class="subdim">
+                                <h4>Explainability</h4>
+                                <p>Prompt-based explanation → PEPLER</p>
+                                <p class="gap">Gap: Explaining Semantic ID paths unexplored</p>
+                            </div>
+                        </div>
+                        <div class="insight">Key Insight: PROMISE applies control at every step via Process Reward Model.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanisms Section -->
+        <section id="mechanisms" class="section">
+            <div class="container">
+                <h2 class="section__title">Control Mechanisms</h2>
+
+                <div class="mechanism-grid">
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage">Input</span>
+                        <h3>Conditioning</h3>
+                        <p>Prepending tokens, instructions, or embeddings to steer generation.</p>
+                        <ul>
+                            <li><strong>Control Tokens</strong> — OxygenREC, OneRanker</li>
+                            <li><strong>Natural Language</strong> — InstructRec, P5</li>
+                            <li><strong>Embedding Injection</strong> — CoLLM, LLaRA</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage">Encoding</span>
+                        <h3>Latent Manipulation</h3>
+                        <p>Editing discrete codes or latent representations.</p>
+                        <ul>
+                            <li><strong>Hierarchical Editing</strong> — TIGER, GPR</li>
+                            <li><strong>Code Composition</strong> — RQ-VAE</li>
+                            <li><strong>Context-Aware Tokenization</strong> — ActionPiece</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage">Training</span>
+                        <h3>Preference Optimization</h3>
+                        <p>Aligning generation with preferences via DPO/RLHF.</p>
+                        <ul>
+                            <li><strong>DPO</strong> — DPO, RankGR</li>
+                            <li><strong>RLHF / HEPO</strong> — GPR</li>
+                            <li><strong>Value-Aware Training</strong> — GPR</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage">Generation</span>
+                        <h3>Constrained Decoding</h3>
+                        <p>Steering output via PRM guidance during inference.</p>
+                        <ul>
+                            <li><strong>Process Reward Model</strong> — PROMISE</li>
+                            <li><strong>Guided Beam Search</strong> — PROMISE</li>
+                            <li><strong>Refined Scoring</strong> — RankGR, GRank</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card mechanism-card--wide">
+                        <span class="mechanism__stage">Architecture</span>
+                        <h3>Multi-Objective Control</h3>
+                        <p>Balancing conflicting objectives through task tokens, separate heads, or Pareto optimization.</p>
+                        <div class="mechanism__methods">
+                            <span class="tag">Task Tokens — OneRanker</span>
+                            <span class="tag">Multi-Head — GPR</span>
+                            <span class="tag">Decoupled Training — OneRanker</span>
+                        </div>
+                        <div class="mechanism__tradeoffs">
+                            <span class="tradeoff">Interest vs Value</span>
+                            <span class="tradeoff">Diversity vs Relevance</span>
+                            <span class="tradeoff">Short-term vs Long-term</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Papers Section -->
+        <section id="papers" class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">Paper Mapping</h2>
+                <p class="section__intro">19 papers mapped to the taxonomy. Highlighted rows indicate comprehensive coverage.</p>
+
+                <div class="table-wrapper">
+                    <table class="table paper-matrix">
+                        <thead>
+                            <tr>
+                                <th>Paper</th>
+                                <th>User</th>
+                                <th>Item</th>
+                                <th>Biz</th>
+                                <th>Int</th>
+                                <th>Cond</th>
+                                <th>Lat</th>
+                                <th>Pref</th>
+                                <th>Dec</th>
+                                <th>Multi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+                            <tr><td>PROMISE</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td></tr>
+                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>P5</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>PEPLER</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gaps Section -->
+        <section id="gaps" class="section">
+            <div class="container">
+                <h2 class="section__title">Research Gaps</h2>
+                <p class="section__intro">Open problems and future research directions.</p>
+
+                <div class="gaps-grid">
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">High Impact</span>
+                        <h3>Explicit Attribute Control</h3>
+                        <p>"Show me items with attribute X and price < Y"</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium">Medium Difficulty</span>
+                            <span>3-5 papers needed</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">High Impact</span>
+                        <h3>Diversity and Fairness</h3>
+                        <p>Fair exposure across items/creators in generative recommendation.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high">High Difficulty</span>
+                            <span>5-7 papers needed</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority">Medium Impact</span>
+                        <h3>Real-Time Feedback Loop</h3>
+                        <p>"Not this, more like that" in real-time.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high">High Difficulty</span>
+                            <span>3-5 papers needed</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority">Medium Impact</span>
+                        <h3>Explainable Control</h3>
+                        <p>Why did the model generate this Semantic ID sequence?</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium">Medium Difficulty</span>
+                            <span>3-5 papers needed</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">High Impact</span>
+                        <h3>Multi-Stakeholder Balance</h3>
+                        <p>Balancing user, business, and creator objectives.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high">High Difficulty</span>
+                            <span>5-7 papers needed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: Social Links -->
+    <footer class="footer footer--social">
+        <div class="container">
+            <p class="footer__title">Controllable Recommendation Generation</p>
+            <p class="footer__subtitle">Research Synthesis</p>
+            <p class="footer__copy">&copy; 2026 · Last updated April 22</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

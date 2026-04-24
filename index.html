@@ -15,7 +15,8 @@
         <a href="/" class="header__logo">Controllable Rec</a>
         <nav class="header__nav">
             <a href="#overview" data-i18n="nav.overview">Overview</a>
-            <a href="#dimensions" data-i18n="nav.dimensions">Dimensions</a>
+            <a href="#targets" data-i18n="nav.targets">Targets</a>
+            <a href="#interfaces" data-i18n="nav.interfaces">Interfaces</a>
             <a href="#mechanisms" data-i18n="nav.mechanisms">Mechanisms</a>
             <a href="#papers" data-i18n="nav.papers">Papers</a>
             <a href="#gaps" data-i18n="nav.gaps">Gaps</a>
@@ -31,23 +32,23 @@
     <section class="hero">
         <div class="hero__content">
             <h1 data-i18n="hero.title">Controllable Recommendation Generation</h1>
-            <p class="hero__tagline" data-i18n="hero.tagline">A taxonomy and research synthesis of control mechanisms in generative recommendation systems</p>
+            <p class="hero__tagline" data-i18n="hero.tagline">A 3-axis taxonomy and research synthesis of control mechanisms in generative recommendation systems</p>
             <div class="hero__stats">
                 <div class="stat">
+                    <span class="stat__number">3</span>
+                    <span class="stat__label" data-i18n="hero.targets">Targets</span>
+                </div>
+                <div class="stat">
                     <span class="stat__number">4</span>
-                    <span class="stat__label" data-i18n="hero.dimensions">Dimensions</span>
+                    <span class="stat__label" data-i18n="hero.interfaces">Interfaces</span>
                 </div>
                 <div class="stat">
                     <span class="stat__number">5</span>
                     <span class="stat__label" data-i18n="hero.mechanisms">Mechanisms</span>
                 </div>
                 <div class="stat">
-                    <span class="stat__number">70+</span>
+                    <span class="stat__number">90+</span>
                     <span class="stat__label" data-i18n="hero.papers">Papers</span>
-                </div>
-                <div class="stat">
-                    <span class="stat__number">10</span>
-                    <span class="stat__label" data-i18n="hero.gaps">Gaps</span>
                 </div>
             </div>
         </div>
@@ -58,25 +59,41 @@
         <section id="overview" class="section">
             <div class="container">
                 <h2 class="section__title" data-i18n="overview.title">Overview</h2>
-                <p class="section__intro" data-i18n="overview.intro">How can we steer what a generative recommender produces? This taxonomy covers user preferences, item attributes, business objectives, and interaction patterns.</p>
+                <p class="section__intro" data-i18n="overview.intro">How can we steer what a generative recommender produces? This 3-axis taxonomy organizes control along orthogonal dimensions: what to steer (Target), how to deliver control (Interface), and how to implement it (Mechanism).</p>
 
-                <div class="cards-grid">
+                <div class="cards-grid cards-grid--three">
                     <div class="card">
-                        <h3 data-i18n="overview.framework">Taxonomy Framework</h3>
+                        <h3 data-i18n="overview.targets">Axis 1: Control Target</h3>
+                        <p class="card__subtitle" data-i18n="overview.targets_q">What entity are we steering?</p>
                         <table class="table">
                             <thead>
-                                <tr><th data-i18n="overview.dimension">Dimension</th><th data-i18n="overview.question">Question</th></tr>
+                                <tr><th data-i18n="overview.target">Target</th><th data-i18n="overview.question">Question</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><strong data-i18n="dim.user">User</strong></td><td data-i18n="dim.user_q">What does the user want?</td></tr>
-                                <tr><td><strong data-i18n="dim.item">Item</strong></td><td data-i18n="dim.item_q">What properties should items have?</td></tr>
-                                <tr><td><strong data-i18n="dim.business">Business</strong></td><td data-i18n="dim.business_q">What does the platform optimize?</td></tr>
-                                <tr><td><strong data-i18n="dim.interaction">Interaction</strong></td><td data-i18n="dim.interaction_q">How is control applied?</td></tr>
+                                <tr><td><strong data-i18n="target.user">User</strong></td><td data-i18n="target.user_q">What does the user want?</td></tr>
+                                <tr><td><strong data-i18n="target.item">Item</strong></td><td data-i18n="target.item_q">What properties should items have?</td></tr>
+                                <tr><td><strong data-i18n="target.business">Business</strong></td><td data-i18n="target.business_q">What does the platform optimize?</td></tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="card">
-                        <h3 data-i18n="overview.mechanisms">Control Mechanisms</h3>
+                        <h3 data-i18n="overview.interfaces">Axis 2: Control Interface</h3>
+                        <p class="card__subtitle" data-i18n="overview.interfaces_q">How is control delivered?</p>
+                        <table class="table">
+                            <thead>
+                                <tr><th data-i18n="overview.interface">Interface</th><th data-i18n="overview.question">Question</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong data-i18n="iface.timing">Timing</strong></td><td data-i18n="iface.timing_q">When is control applied?</td></tr>
+                                <tr><td><strong data-i18n="iface.granularity">Granularity</strong></td><td data-i18n="iface.granularity_q">How fine-grained?</td></tr>
+                                <tr><td><strong data-i18n="iface.explain">Explainability</strong></td><td data-i18n="iface.explain_q">Why this result?</td></tr>
+                                <tr><td><strong data-i18n="iface.feedback">Feedback</strong></td><td data-i18n="iface.feedback_q">How to refine?</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="overview.mechanisms">Axis 3: Control Mechanism</h3>
+                        <p class="card__subtitle" data-i18n="overview.mechanisms_q">How is control implemented?</p>
                         <table class="table">
                             <thead>
                                 <tr><th data-i18n="overview.mechanism">Mechanism</th><th data-i18n="overview.stage">Stage</th></tr>
@@ -94,22 +111,22 @@
             </div>
         </section>
 
-        <!-- Dimensions Section -->
-        <section id="dimensions" class="section section--alt">
+        <!-- Control Targets Section -->
+        <section id="targets" class="section section--alt">
             <div class="container">
-                <h2 class="section__title" data-i18n="dimensions.title">Control Dimensions</h2>
+                <h2 class="section__title" data-i18n="targets.title">Control Targets</h2>
+                <p class="section__intro" data-i18n="targets.intro">What entity are we steering? Targets are MECE by stakeholder.</p>
 
                 <div class="tabs">
-                    <button class="tab active" data-tab="user" data-i18n="dimensions.user_tab">User Control</button>
-                    <button class="tab" data-tab="item" data-i18n="dimensions.item_tab">Item Control</button>
-                    <button class="tab" data-tab="business" data-i18n="dimensions.business_tab">Business Control</button>
-                    <button class="tab" data-tab="interaction" data-i18n="dimensions.interaction_tab">Interaction Control</button>
+                    <button class="tab active" data-tab="user" data-i18n="targets.user_tab">User Control</button>
+                    <button class="tab" data-tab="item" data-i18n="targets.item_tab">Item Control</button>
+                    <button class="tab" data-tab="business" data-i18n="targets.business_tab">Business Control</button>
                 </div>
 
                 <div class="tab-panel active" id="panel-user">
                     <div class="dimension">
-                        <h3 data-i18n="dimensions.user_title">User Control (Demand-Side)</h3>
-                        <p data-i18n="dimensions.user_desc">How to steer recommendations based on what the user wants.</p>
+                        <h3 data-i18n="targets.user_title">User Control (Demand-Side)</h3>
+                        <p data-i18n="targets.user_desc">How to steer recommendations based on what the user wants.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4 data-i18n="user.explicit">Explicit Intent</h4>
@@ -133,8 +150,8 @@
 
                 <div class="tab-panel" id="panel-item">
                     <div class="dimension">
-                        <h3 data-i18n="dimensions.item_title">Item Control (Supply-Side)</h3>
-                        <p data-i18n="dimensions.item_desc">How to steer recommendations based on item properties.</p>
+                        <h3 data-i18n="targets.item_title">Item Control (Supply-Side)</h3>
+                        <p data-i18n="targets.item_desc">How to steer recommendations based on item properties.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4 data-i18n="item.semantic">Semantic Similarity</h4>
@@ -153,8 +170,8 @@
 
                 <div class="tab-panel" id="panel-business">
                     <div class="dimension">
-                        <h3 data-i18n="dimensions.business_title">Business Control (Platform-Side)</h3>
-                        <p data-i18n="dimensions.business_desc">How to steer recommendations for platform objectives.</p>
+                        <h3 data-i18n="targets.business_title">Business Control (Platform-Side)</h3>
+                        <p data-i18n="targets.business_desc">How to steer recommendations for platform objectives.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
                                 <h4 data-i18n="biz.value">Value Optimization</h4>
@@ -171,32 +188,114 @@
                         <div class="insight" data-i18n="biz.insight">Key Insight: OneRanker separates interest from value optimization via task tokens.</div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="tab-panel" id="panel-interaction">
+        <!-- Control Interfaces Section (NEW) -->
+        <section id="interfaces" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="interfaces.title">Control Interfaces</h2>
+                <p class="section__intro" data-i18n="interfaces.intro">How is control delivered? Interfaces are orthogonal to targets — each applies to User, Item, and Business control alike.</p>
+
+                <div class="tabs">
+                    <button class="tab active" data-tab="timing" data-i18n="interfaces.timing_tab">Timing</button>
+                    <button class="tab" data-tab="granularity" data-i18n="interfaces.granularity_tab">Granularity</button>
+                    <button class="tab" data-tab="explainability" data-i18n="interfaces.explainability_tab">Explainability</button>
+                    <button class="tab" data-tab="feedback" data-i18n="interfaces.feedback_tab">Feedback</button>
+                </div>
+
+                <div class="tab-panel active" id="panel-timing">
                     <div class="dimension">
-                        <h3 data-i18n="dimensions.interaction_title">Interaction Control (Interface-Side)</h3>
-                        <p data-i18n="dimensions.interaction_desc">How control is applied and communicated.</p>
+                        <h3 data-i18n="interfaces.timing_title">Control Timing</h3>
+                        <p data-i18n="interfaces.timing_desc">When in the generation pipeline control is applied.</p>
                         <div class="subdim-grid">
                             <div class="subdim">
-                                <h4 data-i18n="int.timing">Control Timing</h4>
-                                <p data-i18n="int.timing_1">Pre-generation → OxygenREC, P5</p>
-                                <p data-i18n="int.timing_2">Mid-generation (PRM) → PROMISE</p>
-                                <p data-i18n="int.timing_3">Post-generation → RankGR, GRank</p>
+                                <h4 data-i18n="timing.pre">Pre-Generation</h4>
+                                <p data-i18n="timing.pre_1">Conditioning tokens, instructions → OxygenREC, P5</p>
                             </div>
                             <div class="subdim">
-                                <h4 data-i18n="int.explain">Explainability</h4>
-                                <p data-i18n="int.explain_1">Prompt-based explanation → PEPLER</p>
-                                <p class="gap" data-i18n="int.explain_gap">Gap: Explaining Semantic ID paths unexplored</p>
+                                <h4 data-i18n="timing.mid">Mid-Generation</h4>
+                                <p data-i18n="timing.mid_1">PRM guidance at each step → PROMISE</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="timing.post">Post-Generation</h4>
+                                <p data-i18n="timing.post_1">Reranking, refined scoring → RankGR, GRank</p>
                             </div>
                         </div>
-                        <div class="insight" data-i18n="int.insight">Key Insight: PROMISE applies control at every step via Process Reward Model.</div>
+                        <div class="insight" data-i18n="timing.insight">Key Insight: PROMISE applies control at every step via Process Reward Model — enables test-time scaling.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-granularity">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.granularity_title">Control Granularity</h3>
+                        <p data-i18n="interfaces.granularity_desc">How fine-grained the control resolution is.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="gran.coarse">Coarse</h4>
+                                <p data-i18n="gran.coarse_1">Category, scenario → OxygenREC scenario tokens</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="gran.medium">Medium</h4>
+                                <p data-i18n="gran.medium_1">Semantic ID levels → TIGER hierarchy</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="gran.fine">Fine</h4>
+                                <p class="gap" data-i18n="gran.fine_gap">Gap: Attribute-level control is largely unexplored</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="gran.insight">Key Insight: Hierarchical Semantic IDs naturally support multi-granularity — a built-in control knob.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-explainability">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.explainability_title">Control Explainability</h3>
+                        <p data-i18n="interfaces.explainability_desc">How the system communicates why a recommendation was generated.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="expl.prompt">Prompt-Based</h4>
+                                <p data-i18n="expl.prompt_1">LLM generates rationale → PEPLER, HF4Rec</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="expl.path">Path Tracing</h4>
+                                <p class="gap" data-i18n="expl.path_gap">Gap: Explaining Semantic ID generation paths unexplored</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="expl.counter">Counterfactual</h4>
+                                <p data-i18n="expl.counter_1">Behavior revocation → User-Controllable-Rec</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="expl.insight">Key Insight: PRM scores could serve as step-level explanations — surfacing them is an open opportunity.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-feedback">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.feedback_title">Control Feedback</h3>
+                        <p data-i18n="interfaces.feedback_desc">How users iteratively refine recommendations.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="fb.conv">Conversational</h4>
+                                <p data-i18n="fb.conv_1">Multi-turn dialogue → Chat-REC, TRIP</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="fb.elicit">Preference Elicitation</h4>
+                                <p data-i18n="fb.elicit_1">Curiosity-driven querying → CURIO</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="fb.online">Online Learning</h4>
+                                <p class="gap" data-i18n="fb.online_gap">Gap: Real-time generation update is an open problem</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="fb.insight">Key Insight: Most feedback currently goes through conditioning — closing the loop via latent/decoding mechanisms is unexplored.</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Mechanisms Section -->
-        <section id="mechanisms" class="section">
+        <section id="mechanisms" class="section section--alt">
             <div class="container">
                 <h2 class="section__title" data-i18n="mechanisms.title">Control Mechanisms</h2>
 
@@ -269,20 +368,24 @@
         </section>
 
         <!-- Papers Section -->
-        <section id="papers" class="section section--alt">
+        <section id="papers" class="section">
             <div class="container">
                 <h2 class="section__title" data-i18n="papers.title">Paper Mapping</h2>
-                <p class="section__intro" data-i18n="papers.intro">19 papers mapped to the taxonomy. Highlighted rows indicate comprehensive coverage.</p>
+                <p class="section__intro" data-i18n="papers.intro">39 papers mapped to the 3-axis taxonomy. Highlighted rows indicate comprehensive coverage.</p>
 
                 <div class="table-wrapper">
                     <table class="table paper-matrix">
                         <thead>
                             <tr>
                                 <th>Paper</th>
+                                <th colspan="3" style="text-align:center; border-bottom: 2px solid #6366f1;">Target</th>
+                                <th colspan="5" style="text-align:center; border-bottom: 2px solid #6366f1;">Mechanism</th>
+                            </tr>
+                            <tr>
+                                <th></th>
                                 <th>User</th>
                                 <th>Item</th>
                                 <th>Biz</th>
-                                <th>Int</th>
                                 <th>Cond</th>
                                 <th>Lat</th>
                                 <th>Pref</th>
@@ -291,25 +394,42 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
-                            <tr><td>PROMISE</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
-                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td></tr>
-                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>P5</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
-                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>PEPLER</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+                            <tr><td>PROMISE</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td></tr>
+                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>P5</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>PEPLER</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>UCEpic</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>PDU</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>UserControllable</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>PaInvRL</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>LMIndexer</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>AlignLLM</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>MMGRec</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DeepPRL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>LAMIA</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RLHS</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>WRO</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>Rec-R1</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>SIDStability</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>Curio</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>HF4Rec</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>AutoCDSR</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>SIDE</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -317,16 +437,17 @@
         </section>
 
         <!-- Gaps Section -->
-        <section id="gaps" class="section">
+        <section id="gaps" class="section section--alt">
             <div class="container">
                 <h2 class="section__title" data-i18n="gaps.title">Research Gaps</h2>
-                <p class="section__intro" data-i18n="gaps.intro">Open problems and future research directions.</p>
+                <p class="section__intro" data-i18n="gaps.intro">Open problems framed using the 3-axis taxonomy (Target × Interface × Mechanism).</p>
 
                 <div class="gaps-grid">
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.attr_title">Explicit Attribute Control</h3>
                         <p data-i18n="gap.attr_desc">"Show me items with attribute X and price < Y" — fine-grained attribute specification unexplored.</p>
+                        <div class="gap__axes">Item × Fine Granularity × any</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span data-i18n="gap.no_papers">No papers yet</span>
@@ -337,6 +458,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.fair_title">Diversity and Fairness</h3>
                         <p data-i18n="gap.fair_desc">Does autoregressive generation amplify popularity bias? How to enforce exposure equity?</p>
+                        <div class="gap__axes">Business × any × Decoding/Multi-Obj</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span>PROMISE (partial)</span>
@@ -347,6 +469,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.stake_title">Multi-Stakeholder Balance</h3>
                         <p data-i18n="gap.stake_desc">User, business, and creator objectives. Creator welfare is ignored in current systems.</p>
+                        <div class="gap__axes">all Targets × any × Multi-Objective</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span>GPR, OneRanker (partial)</span>
@@ -357,6 +480,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.online_title">Online Learning for Semantic IDs</h3>
                         <p data-i18n="gap.online_desc">How to update Semantic IDs with streaming data? Current systems require batch retraining.</p>
+                        <div class="gap__axes">Item × Feedback × Latent</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span data-i18n="gap.no_papers">No papers yet</span>
@@ -367,6 +491,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.stat_title">LLM Statistical Learning Limitation</h3>
                         <p data-i18n="gap.stat_desc">LLMs struggle to learn collaborative signals due to strong semantic priors.</p>
+                        <div class="gap__axes">User × any × Conditioning</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span>BIGRec</span>
@@ -377,6 +502,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.feedback_title">Real-Time Feedback Loop</h3>
                         <p data-i18n="gap.feedback_desc">"Not this, more like that" — interactive refinement in real-time.</p>
+                        <div class="gap__axes">User × Feedback × non-Conditioning</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span>Chat-REC (limited)</span>
@@ -387,6 +513,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.explain_title">Explainable Generation Path</h3>
                         <p data-i18n="gap.explain_desc">Why did the model choose this Semantic ID sequence? Generation path explanation unexplored.</p>
+                        <div class="gap__axes">any × Explainability × Latent</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span>PEPLER (final only)</span>
@@ -397,6 +524,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.drift_title">Semantic Drift in Hierarchy</h3>
                         <p data-i18n="gap.drift_desc">Errors in high-level tokens propagate irreversibly into wrong semantic subspaces.</p>
+                        <div class="gap__axes">Item × Granularity × Latent/Decoding</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span>PROMISE (PRM)</span>
@@ -407,6 +535,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.cross_title">Cross-Domain Transfer</h3>
                         <p data-i18n="gap.cross_desc">Can Semantic IDs trained in one domain transfer to another?</p>
+                        <div class="gap__axes">Item × any × Latent</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span data-i18n="gap.no_papers">No papers yet</span>
@@ -417,6 +546,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.loop_title">Loop Scaling for GenRec</h3>
                         <p data-i18n="gap.loop_desc">Can LoopCTR's recursive computation apply to Semantic ID generation?</p>
+                        <div class="gap__axes">any × Timing × Decoding</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span>LoopCTR, PROMISE</span>
@@ -431,11 +561,11 @@
     <footer class="footer footer--social">
         <div class="container">
             <p class="footer__title" data-i18n="footer.title">Controllable Recommendation Generation</p>
-            <p class="footer__subtitle" data-i18n="footer.subtitle">Research Synthesis</p>
-            <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 · Last updated April 22</p>
+            <p class="footer__subtitle" data-i18n="footer.subtitle">3-Axis Research Taxonomy</p>
+            <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 · Last updated April 24</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260424"></script>
 </body>
 </html>

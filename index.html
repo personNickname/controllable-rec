@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controllable Rec - Research Taxonomy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260427b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
             <a href="#mechanisms" data-i18n="nav.mechanisms">Mechanisms</a>
             <a href="#papers" data-i18n="nav.papers">Papers</a>
             <a href="#gaps" data-i18n="nav.gaps">Gaps</a>
+            <a href="livestream.html" style="color:var(--theme-accent)">Livestream ↗</a>
         </nav>
         <div class="lang-switcher">
             <button class="lang-btn active" data-lang="en">EN</button>
@@ -60,6 +61,10 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="overview.title">Overview</h2>
                 <p class="section__intro" data-i18n="overview.intro">How can we steer what a generative recommender produces? This 3-axis taxonomy organizes control along orthogonal dimensions: what to steer (Target), how to deliver control (Interface), and how to implement it (Mechanism).</p>
+
+                <div class="section__image">
+                    <img src="images/taxonomy-cube.png" alt="3-Axis Taxonomy of Controllable Recommendation" loading="lazy">
+                </div>
 
                 <div class="cards-grid cards-grid--three">
                     <div class="card">
@@ -115,6 +120,10 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="targets.title">Control Targets</h2>
                 <p class="section__intro" data-i18n="targets.intro">What entity are we steering? Targets are MECE by stakeholder.</p>
+
+                <div class="section__image">
+                    <img src="images/target-stakeholders.png" alt="Three Control Targets: User, Item, Business" loading="lazy">
+                </div>
 
                 <div class="tabs">
                     <button class="tab active" data-tab="user" data-i18n="targets.user_tab">User Control</button>
@@ -195,6 +204,10 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="interfaces.title">Control Interfaces</h2>
                 <p class="section__intro" data-i18n="interfaces.intro">How is control delivered? Interfaces are orthogonal to targets — each applies to User, Item, and Business control alike.</p>
+
+                <div class="section__image">
+                    <img src="images/interface-spectrum.png" alt="Four Dimensions of Control Interface" loading="lazy">
+                </div>
 
                 <div class="tabs">
                     <button class="tab active" data-tab="timing" data-i18n="interfaces.timing_tab">Timing</button>
@@ -298,6 +311,10 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="mechanisms.title">Control Mechanisms</h2>
 
+                <div class="section__image">
+                    <img src="images/mechanism-pipeline.png" alt="Control Mechanisms Along the Model Lifecycle" loading="lazy">
+                </div>
+
                 <div class="mechanism-grid">
                     <div class="mechanism-card">
                         <span class="mechanism__stage" data-i18n="stage.input">Input</span>
@@ -357,6 +374,10 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="papers.title">Paper Mapping</h2>
                 <p class="section__intro" data-i18n="papers.intro">39 papers mapped to the 3-axis taxonomy. Highlighted rows indicate comprehensive coverage.</p>
+
+                <div class="section__image">
+                    <img src="images/paper-heatmap.png" alt="Paper Coverage: Target × Mechanism Matrix" loading="lazy">
+                </div>
 
                 <div class="table-wrapper">
                     <table class="table paper-matrix">
@@ -425,6 +446,10 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="gaps.title">Research Gaps</h2>
                 <p class="section__intro" data-i18n="gaps.intro">Open problems framed using the 3-axis taxonomy (Target × Interface × Mechanism).</p>
+
+                <div class="section__image">
+                    <img src="images/research-gaps.png" alt="Research Gap Landscape: Impact vs Difficulty" loading="lazy">
+                </div>
 
                 <div class="gaps-grid">
                     <div class="gap-card gap-card--high">

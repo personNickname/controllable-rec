@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestream Rec - Controllable Recommendation for Entertainment Livestream</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header header--left">
+        <a href="index.html" class="header__logo">Controllable Rec</a>
+        <nav class="header__nav">
+            <a href="#overview" data-i18n="nav.overview">Overview</a>
+            <a href="#targets" data-i18n="nav.targets">Targets</a>
+            <a href="#interfaces" data-i18n="nav.interfaces">Interfaces</a>
+            <a href="#mechanisms" data-i18n="nav.mechanisms">Mechanisms</a>
+            <a href="#industry" data-i18n="nav.industry">Industry</a>
+            <a href="#gaps" data-i18n="nav.gaps">Gaps</a>
+        </nav>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+        <button class="header__menu" aria-label="Menu">☰</button>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1 data-i18n="hero.title">Controllable Entertainment Livestream Recommendation</h1>
+            <p class="hero__tagline" data-i18n="hero.tagline">Mapping the 3-axis controllable recommendation taxonomy to entertainment livestream, with gift value and consume value as core metrics</p>
+            <div class="hero__stats">
+                <div class="stat">
+                    <span class="stat__number">3</span>
+                    <span class="stat__label" data-i18n="hero.axes">Axes Mapped</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">💎</span>
+                    <span class="stat__label" data-i18n="hero.gift">Gift Value</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">📊</span>
+                    <span class="stat__label" data-i18n="hero.click">Consume Value</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">5</span>
+                    <span class="stat__label" data-i18n="hero.gaps">Research Gaps</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="overview.title">Why Livestream Is Different</h2>
+                <p class="section__intro" data-i18n="overview.intro">Entertainment livestream has 4 unique properties that make controllability both harder and more important than static-item recommendation.</p>
+
+                <div class="cards-grid cards-grid--two">
+                    <div class="card">
+                        <h3 data-i18n="overview.properties">Unique Properties</h3>
+                        <table class="table">
+                            <thead>
+                                <tr><th data-i18n="overview.property">Property</th><th data-i18n="overview.static">Static Rec</th><th data-i18n="overview.live">Livestream</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong data-i18n="overview.dynamic">Content Dynamism</strong></td><td data-i18n="overview.dynamic_s">Attributes fixed</td><td data-i18n="overview.dynamic_l">Changes every second</td></tr>
+                                <tr><td><strong data-i18n="overview.engage">Engagement Depth</strong></td><td data-i18n="overview.engage_s">Single click</td><td data-i18n="overview.engage_l">10min+ viewing</td></tr>
+                                <tr><td><strong data-i18n="overview.realtime">Real-time Feedback</strong></td><td data-i18n="overview.realtime_s">Post-consumption</td><td data-i18n="overview.realtime_l">Comments, gifts during consumption</td></tr>
+                                <tr><td><strong data-i18n="overview.creator">Creator Ecosystem</strong></td><td data-i18n="overview.creator_s">Supply stable</td><td data-i18n="overview.creator_l">Streamer cold-start, fairness</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="overview.metrics">Core Metrics</h3>
+                        <table class="table">
+                            <thead>
+                                <tr><th data-i18n="overview.metric">Metric</th><th data-i18n="overview.definition">Definition</th><th data-i18n="overview.role">Role</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong data-i18n="overview.gift_val">Gift Value</strong></td><td data-i18n="overview.gift_def">Total gifts to streamer</td><td data-i18n="overview.gift_role">Revenue</td></tr>
+                                <tr><td><strong data-i18n="overview.click_rate">Consume Value</strong></td><td data-i18n="overview.click_def">Time, comments, follows, engagement</td><td data-i18n="overview.click_role">Engagement</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="insight" data-i18n="overview.insight">Gift value is unique to livestream — a real-time, voluntary revenue signal reflecting entertainment quality, not purchase intent.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Targets Section -->
+        <section id="targets" class="section section--alt">
+            <div class="container">
+                <h2 class="section__title" data-i18n="targets.title">Axis 1: Control Targets</h2>
+                <p class="section__intro" data-i18n="targets.intro">What entity are we steering? Mapped from static-item to livestream context.</p>
+
+                <div class="tabs">
+                    <button class="tab active" data-tab="ls-user" data-i18n="targets.user_tab">User</button>
+                    <button class="tab" data-tab="ls-item" data-i18n="targets.item_tab">Item</button>
+                    <button class="tab" data-tab="ls-biz" data-i18n="targets.biz_tab">Business</button>
+                </div>
+
+                <div class="tab-panel active" id="panel-ls-user">
+                    <div class="dimension">
+                        <h3 data-i18n="targets.user_title">User Control (Demand-Side)</h3>
+                        <p data-i18n="targets.user_desc">Gift propensity, entertainment mood, watch duration intent.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="tu.explicit">Explicit Intent</h4>
+                                <p data-i18n="tu.explicit_1">"I want gaming streams" — genre/mood intent</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="tu.implicit">Implicit Preference</h4>
+                                <p data-i18n="tu.implicit_1">Gift history (strongest signal), watch duration, comment sentiment</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="tu.context">Context State</h4>
+                                <p data-i18n="tu.context_1">Late-night vs daytime content, social context</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="tu.multi">Multi-Interest</h4>
+                                <p data-i18n="tu.multi_1">Gaming + singing + chat — multiple entertainment genres</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="tu.insight">Key: Gift history provides a much stronger preference signal than clicks. A user who gifts 100元 to a singer has expressed far more intent than one who clicked.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ls-item">
+                    <div class="dimension">
+                        <h3 data-i18n="targets.item_title">Item Control (Supply-Side)</h3>
+                        <p data-i18n="targets.item_desc">Dynamic stream = sequence of 30s segments with real-time changing attributes.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="ti.content">Content Type</h4>
+                                <p data-i18n="ti.content_1">Stream genre: gaming / singing / chat / outdoor</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="ti.attr">Attributes</h4>
+                                <p data-i18n="ti.attr_1">Streamer style, energy level, interaction intensity, audience size</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="ti.semantic">Semantic Similarity</h4>
+                                <p data-i18n="ti.semantic_1">Foresight Semantic ID: 30s segment → VQ-VAE → [genre, style, moment_type]</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="ti.quality">Quality Signal</h4>
+                                <p data-i18n="ti.quality_1">Real-time: comments/min, gifts/min, viewer count trend</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="ti.insight">Key: A livestream is not one item — it's a sequence of evolving micro-items. Controlling "when to recommend" (during high-light) is where real value lies.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ls-biz">
+                    <div class="dimension">
+                        <h3 data-i18n="targets.biz_title">Business Control (Platform-Side)</h3>
+                        <p data-i18n="targets.biz_desc">Gift value, consume value, and streamer ecosystem health.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="tb.value">Value Optimization</h4>
+                                <p data-i18n="tb.value_1">Gift value maximization: α×consume_value + β×gift_value</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="tb.strategic">Strategic Goals</h4>
+                                <p data-i18n="tb.strategic_1">New streamer cold-start, genre diversity, ecosystem health</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="tb.fairness">Diversity / Fairness</h4>
+                                <p data-i18n="tb.fairness_1">Prevent winner-take-all — streamers who get no exposure will quit</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="tb.compliance">Compliance</h4>
+                                <p data-i18n="tb.compliance_1">Real-time content moderation, age-appropriate gating</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="tb.insight">Key: Streamer ecosystem is more fragile than product catalogs. A streamer who gets no exposure will quit (unlike a product that stays in inventory).</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interfaces Section -->
+        <section id="interfaces" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="interfaces.title">Axis 2: Control Interfaces</h2>
+                <p class="section__intro" data-i18n="interfaces.intro">How is control delivered? Real-time content creates fundamentally different interface requirements.</p>
+
+                <div class="tabs">
+                    <button class="tab active" data-tab="ls-timing" data-i18n="interfaces.timing_tab">Timing</button>
+                    <button class="tab" data-tab="ls-gran" data-i18n="interfaces.gran_tab">Granularity</button>
+                    <button class="tab" data-tab="ls-expl" data-i18n="interfaces.expl_tab">Explainability</button>
+                    <button class="tab" data-tab="ls-fb" data-i18n="interfaces.fb_tab">Feedback</button>
+                </div>
+
+                <div class="tab-panel active" id="panel-ls-timing">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.timing_title">Control Timing</h3>
+                        <p data-i18n="interfaces.timing_desc">When in the pipeline control is applied — mid-generation is unique to livestream.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="lt.pre">Pre-Generation</h4>
+                                <p data-i18n="lt.pre_1">User opens feed → rank streams by predicted consume value and gift propensity</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="lt.mid">Mid-Generation</h4>
+                                <p data-i18n="lt.mid_1">User watching → decide when to surface next stream. Interrupting during high-light hurts gift value; waiting during lull loses the user</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="lt.post">Post-Generation</h4>
+                                <p data-i18n="lt.post_1">Rerank by real-time state — is streamer still live? Current energy? Recent gift surge?</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="lt.insight">Key: Mid-generation timing is unique to livestream. The system must decide WHEN to intervene, not just WHAT to recommend.</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ls-gran">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.gran_title">Control Granularity</h3>
+                        <p data-i18n="interfaces.gran_desc">How fine-grained — from genre to 30-second segments.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="lg.coarse">Coarse</h4>
+                                <p data-i18n="lg.coarse_1">Stream type: gaming / singing / chat / outdoor</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="lg.medium">Medium</h4>
+                                <p data-i18n="lg.medium_1">Streamer style + current content theme</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="lg.fine">Fine</h4>
+                                <p data-i18n="lg.fine_1">This 30s window is a high-light → boost now. Maps to Foresight Semantic ID</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="lg.insight">Key: Foresight's 30s segment Semantic ID enables fine-grained control — distinguish "this streamer right now" from "5 minutes ago."</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ls-expl">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.expl_title">Control Explainability</h3>
+                        <p data-i18n="interfaces.expl_desc">Why this recommendation — temporal explanations become possible.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="le.prompt">Prompt-Based</h4>
+                                <p data-i18n="le.prompt_1">"This streamer matches your interest in gaming"</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="le.moment">Moment-Based</h4>
+                                <p data-i18n="le.moment_1">"This streamer is in a high-energy moment right now" — real-time state as explanation</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="le.social">Social Proof</h4>
+                                <p data-i18n="le.social_1">"500 viewers are gifting right now" — crowd signal as explanation</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="le.insight">Key: Livestream enables temporal explanations — "why now" is as important as "why this streamer."</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ls-fb">
+                    <div class="dimension">
+                        <h3 data-i18n="interfaces.fb_title">Control Feedback</h3>
+                        <p data-i18n="interfaces.fb_desc">Continuous real-time signals instead of post-hoc ratings.</p>
+                        <div class="subdim-grid">
+                            <div class="subdim">
+                                <h4 data-i18n="lf.realtime">Implicit Real-time</h4>
+                                <p data-i18n="lf.realtime_1">Watch duration, comments, gifts, follows, screen-off — continuous during consumption</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="lf.gift">Gift as Feedback</h4>
+                                <p data-i18n="lf.gift_1">Strongest positive signal. Amount provides continuous preference value, not binary</p>
+                            </div>
+                            <div class="subdim">
+                                <h4 data-i18n="lf.leave">Leave as Feedback</h4>
+                                <p data-i18n="lf.leave_1">When they leave matters — leaving during lull vs high-light mean different things</p>
+                            </div>
+                        </div>
+                        <div class="insight" data-i18n="lf.insight">Key: A gift mid-stream is both a business metric AND a feedback signal. This creates a closed loop: feedback → update recommendation of the SAME stream to other users.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanisms Section -->
+        <section id="mechanisms" class="section section--alt">
+            <div class="container">
+                <h2 class="section__title" data-i18n="mechanisms.title">Axis 3: Control Mechanisms</h2>
+                <p class="section__intro" data-i18n="mechanisms.intro">How is control implemented? Each mechanism maps to livestream-specific signals and techniques.</p>
+
+                <div class="mechanism-grid">
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage" data-i18n="stage.input">Input</span>
+                        <h3 data-i18n="mech.conditioning">Conditioning</h3>
+                        <p data-i18n="mech.cond_desc">Segment Semantic ID, streamer profile tokens, real-time state embedding as inputs.</p>
+                        <ul>
+                            <li><strong data-i18n="mc.sid">Segment Semantic ID</strong> — Foresight VQ-VAE codes for 30s snapshots</li>
+                            <li><strong data-i18n="mc.profile">Streamer Profile</strong> — Genre, style, historical gift rate</li>
+                            <li><strong data-i18n="mc.state">Real-time State</strong> — Energy, interaction intensity, viewer count</li>
+                            <li><strong data-i18n="mc.context">Context Tokens</strong> — Time-of-day, user mood</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage" data-i18n="stage.training">Training</span>
+                        <h3 data-i18n="mech.preference">Preference Optimization</h3>
+                        <p data-i18n="mech.pref_desc">DPO on gift/consume value preference pairs with natural hierarchy.</p>
+                        <ul>
+                            <li><strong data-i18n="mp.gift_dpo">Gift-based DPO</strong> — Gifted stream > non-gifted</li>
+                            <li><strong data-i18n="mp.hier_dpo">Hierarchical DPO</strong> — 大额 > 小额 > 长看 > 点击 > 跳过</li>
+                            <li><strong data-i18n="mp.click_opt">Consume Value Opt</strong> — High engagement > low engagement</li>
+                            <li><strong data-i18n="mp.joint">Joint Training</strong> — α×L_gift + β×L_consume</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage" data-i18n="stage.generation">Generation</span>
+                        <h3 data-i18n="mech.decoding">Constrained Decoding</h3>
+                        <p data-i18n="mech.dec_desc">High-light moment detection as real-time PRM, stream-state-aware beam search.</p>
+                        <ul>
+                            <li><strong data-i18n="md.prm">High-light PRM</strong> — LiveForesighter moment detection</li>
+                            <li><strong data-i18n="md.beam">State-aware Beam</strong> — Weighted by live/energy/interaction</li>
+                            <li><strong data-i18n="md.constraint">Segment Constraints</strong> — Fix top codes for genre control</li>
+                            <li><strong data-i18n="md.crowd">Crowd Signals</strong> — Gift/comment rate as beam score</li>
+                        </ul>
+                    </div>
+
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage" data-i18n="stage.post">Post-generation</span>
+                        <h3 data-i18n="mech.post">Post-Processing</h3>
+                        <p data-i18n="mech.post_desc">Multi-signal reranking with real-time state refresh at high frequency.</p>
+                        <ul>
+                            <li><strong data-i18n="mpp.rerank">Multi-signal Reranking</strong> — relevance + gift + consume + fairness</li>
+                            <li><strong data-i18n="mpp.refresh">State Refresh</strong> — Drop ended, boost high-light, penalize lull</li>
+                            <li><strong data-i18n="mpp.diversity">Streamer Diversity</strong> — MMR across genres</li>
+                            <li><strong data-i18n="mpp.fairness">Fairness Bonus</strong> — Exposure equity for new streamers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Section -->
+        <section id="industry" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="industry.title">Industry Grounding</h2>
+                <p class="section__intro" data-i18n="industry.intro">Two Kuaishou papers provide the industrial foundation for this taxonomy mapping.</p>
+
+                <div class="cards-grid cards-grid--two">
+                    <div class="card">
+                        <h3>Foresight <span style="font-weight:400;color:var(--theme-text-muted)">(WSDM'26)</span></h3>
+                        <p data-i18n="industry.foresight_desc">VQ-VAE Semantic ID for 30s livestream segments. Enables segment-level recall and recommendation.</p>
+                        <table class="table">
+                            <thead>
+                                <tr><th data-i18n="industry.tech">Technique</th><th data-i18n="industry.mapping">Taxonomy Mapping</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td data-i18n="industry.f_sid">30s Segment Semantic ID</td><td>Item × Conditioning</td></tr>
+                                <tr><td data-i18n="industry.f_next">Next-SID Prediction</td><td>Item × Constrained Decoding</td></tr>
+                                <tr><td data-i18n="industry.f_recall">Segment-level Recall</td><td>Item × Granularity (Fine)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <h3>LiveForesighter <span style="font-weight:400;color:var(--theme-text-muted)">(400M DAU)</span></h3>
+                        <p data-i18n="industry.live_desc">High-light moment detection and future prediction. Deployed at scale for real-time stream quality scoring.</p>
+                        <table class="table">
+                            <thead>
+                                <tr><th data-i18n="industry.tech">Technique</th><th data-i18n="industry.mapping">Taxonomy Mapping</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td data-i18n="industry.l_highlight">High-light Detection</td><td>Item × Constrained Decoding</td></tr>
+                                <tr><td data-i18n="industry.l_predict">Future Prediction</td><td>Business × Conditioning</td></tr>
+                                <tr><td data-i18n="industry.l_rerank">Real-time Reranking</td><td>Business × Post-Processing</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="insight" data-i18n="industry.insight">LiveForesighter's high-light detection is essentially a real-time PRM — it scores "is this moment worth recommending?" at each time step, directly analogous to PROMISE's process reward model.</div>
+            </div>
+        </section>
+
+        <!-- Gaps Section -->
+        <section id="gaps" class="section section--alt">
+            <div class="container">
+                <h2 class="section__title" data-i18n="gaps.title">Research Gaps</h2>
+                <p class="section__intro" data-i18n="gaps.intro">5 gaps unique to entertainment livestream, identified through the 3-axis taxonomy mapping.</p>
+
+                <div class="gaps-grid">
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">P0</span>
+                        <h3 data-i18n="gap.l1_title">Temporal Semantic ID Evolution</h3>
+                        <p data-i18n="gap.l1_desc">No work models transitions between segments. Predicting "high-light in 2 minutes" enables proactive recommendation — boosting consume value by timing.</p>
+                        <div class="gap__axes">Item × Granularity × Conditioning</div>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span data-i18n="gap.impact_click">High Consume Value Impact</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">P0</span>
+                        <h3 data-i18n="gap.l4_title">Gift Value Preference Hierarchy</h3>
+                        <p data-i18n="gap.l4_desc">Gift amounts have natural hierarchy (大额 > 小额 > 评论 > 点击 > 跳过). No work applies Listwise DPO to this continuous signal.</p>
+                        <div class="gap__axes">Business × Preference Optimization</div>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span data-i18n="gap.impact_gift">High Gift Value Impact</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">P1</span>
+                        <h3 data-i18n="gap.l2_title">Real-time Feedback as Decoding Signal</h3>
+                        <p data-i18n="gap.l2_desc">Gift and comment signals arrive continuously but only used for post-processing. Feeding them into decoding could leverage social proof and gifting contagion.</p>
+                        <div class="gap__axes">User × Feedback × Constrained Decoding</div>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.impact_both">High Consume + Gift Impact</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority">P1</span>
+                        <h3 data-i18n="gap.l5_title">Cross-Stream Session Control</h3>
+                        <p data-i18n="gap.l5_desc">Users hop between streams. Interrupting during high-light hurts gift value; waiting during lull loses the user. No work optimizes transition timing.</p>
+                        <div class="gap__axes">User × Timing × Conditioning</div>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
+                            <span data-i18n="gap.impact_click">High Consume Value Impact</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority">P2</span>
+                        <h3 data-i18n="gap.l3_title">Streamer Cold-Start Fairness</h3>
+                        <p data-i18n="gap.l3_desc">New streamers have no gift history and no Semantic ID history. The "item" doesn't exist until the stream starts.</p>
+                        <div class="gap__axes">Business × Post-Processing × Pref Opt</div>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span data-i18n="gap.impact_gift_m">Medium Gift Value Impact</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority Matrix -->
+                <h3 style="margin-top:2rem" data-i18n="gaps.matrix_title">Priority Matrix</h3>
+                <div class="table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="gaps.gap">Gap</th>
+                                <th data-i18n="gaps.coordinates">Coordinates</th>
+                                <th data-i18n="gaps.click_impact">Consume Value</th>
+                                <th data-i18n="gaps.gift_impact">Gift Value</th>
+                                <th data-i18n="gaps.difficulty">Difficulty</th>
+                                <th data-i18n="gaps.priority">Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td data-i18n="gaps.m_l1">L1 Temporal SID</td><td>Item × Gran × Cond</td><td>High</td><td>Medium</td><td>Medium</td><td><strong>P0</strong></td></tr>
+                            <tr><td data-i18n="gaps.m_l4">L4 Gift Hierarchy</td><td>Biz × Pref Opt</td><td>Medium</td><td>High</td><td>Medium</td><td><strong>P0</strong></td></tr>
+                            <tr><td data-i18n="gaps.m_l2">L2 RT Feedback</td><td>User × FB × Dec</td><td>High</td><td>High</td><td>High</td><td><strong>P1</strong></td></tr>
+                            <tr><td data-i18n="gaps.m_l5">L5 Cross-Stream</td><td>User × Timing × Cond</td><td>High</td><td>Medium</td><td>High</td><td><strong>P1</strong></td></tr>
+                            <tr><td data-i18n="gaps.m_l3">L3 Cold-Start</td><td>Biz × Post × Pref</td><td>Low</td><td>Medium</td><td>Medium</td><td><strong>P2</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="insight" data-i18n="gaps.roadmap">Recommended: L1 + L4 first — high impact, medium difficulty, complementary (L1 provides representation, L4 provides training signal).</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer--social">
+        <div class="container">
+            <p class="footer__title" data-i18n="footer.title">Controllable Livestream Recommendation</p>
+            <p class="footer__subtitle" data-i18n="footer.subtitle">3-Axis Taxonomy Mapping for Entertainment Livestream</p>
+            <p class="footer__copy">&copy; 2026 · <a href="index.html" style="color:rgba(255,255,255,0.7)">Back to General Taxonomy</a></p>
+        </div>
+    </footer>
+
+    <script src="livestream.js?v=20260427"></script>
+</body>
+</html>

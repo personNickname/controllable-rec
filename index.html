@@ -35,7 +35,7 @@
     <section class="hero">
         <div class="hero__content">
             <h1 data-i18n="hero.title">Controllable Recommendation Generation</h1>
-            <p class="hero__tagline" data-i18n="hero.tagline">A 3-axis taxonomy of control mechanisms in generative recommendation, grounded in entertainment livestream</p>
+            <p class="hero__tagline" data-i18n="hero.tagline">A 3-axis taxonomy of control mechanisms in generative recommendation, grounded in livestream recommendation</p>
             <div class="hero__stats">
                 <div class="stat">
                     <span class="stat__number">3</span>
@@ -74,10 +74,6 @@
 
                 <div class="cards-grid cards-grid--two">
                     <div class="card">
-                        <h3 data-i18n="thesis.why_gen">Why Generative Rec Now?</h3>
-                        <p data-i18n="thesis.why_gen_desc">Traditional rec scores and ranks from a candidate set. Generative rec produces item sequences directly. This shifts the selection space to the generator — making control a first-class problem, not an afterthought.</p>
-                    </div>
-                    <div class="card">
                         <h3 data-i18n="thesis.why_ctrl">Why Controllability Is the Bottleneck?</h3>
                         <p data-i18n="thesis.why_ctrl_desc">Generation quality is proven (TIGER/GPR/OxygenREC in production). But generation without precise control can't replace traditional pipelines — can't enforce business constraints, can't guarantee fairness, can't respond to feedback.</p>
                     </div>
@@ -91,17 +87,17 @@
                     </div>
                 </div>
 
-                <h3 style="margin-top:2rem" data-i18n="thesis.scene_title">Industry Scene: Entertainment Livestream</h3>
+                <h3 style="margin-top:2rem" data-i18n="thesis.scene_title">Livestream Recommendation</h3>
                 <div class="cards-grid cards-grid--two">
                     <div class="card">
                         <h3 data-i18n="thesis.solve">What We Solve</h3>
                         <table class="table">
                             <thead><tr><th data-i18n="thesis.problem">Problem</th><th data-i18n="thesis.solution">Solution</th></tr></thead>
                             <tbody>
-                                <tr><td data-i18n="thesis.p1">Content changes every second</td><td data-i18n="thesis.s1">Item Control: Segment Semantic ID encodes 30s snapshots</td></tr>
-                                <tr><td data-i18n="thesis.p2">10min+ sessions need transition control</td><td data-i18n="thesis.s2">Timing Interface: Mid-stream transition optimization</td></tr>
-                                <tr><td data-i18n="thesis.p3">Gifts/comments arrive in real-time</td><td data-i18n="thesis.s3">Feedback Interface: Real-time signal injection into decoding</td></tr>
-                                <tr><td data-i18n="thesis.p4">Streamers need fair exposure to survive</td><td data-i18n="thesis.s4">Business Target: Cold-start fairness as first-class constraint</td></tr>
+                                <tr><td data-i18n="thesis.p1">Content changes every second</td><td data-i18n="thesis.s1">Segment Semantic ID encodes 30s snapshots as discrete tokens for generation</td></tr>
+                                <tr><td data-i18n="thesis.p2">Real-time feedback: gifts/comments arrive rapidly</td><td data-i18n="thesis.s2">Feedback signals injected into decoding as real-time PRM</td></tr>
+                                <tr><td data-i18n="thesis.p3">Generated results must be valid — only active liverooms can be shown</td><td data-i18n="thesis.s3">Constrained decoding filters invalid (offline) candidates at generation time</td></tr>
+                                <tr><td data-i18n="thesis.p4">Livestream is one content type among many — need cross-domain interest transfer</td><td data-i18n="thesis.s4">Conditioning on user interest from other domains to generate high-value livestream recommendations</td></tr>
                             </tbody>
                         </table>
                     </div>

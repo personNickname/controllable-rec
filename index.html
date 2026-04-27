@@ -94,8 +94,16 @@
                 <h3 style="margin-top:2rem" data-i18n="thesis.scene_title">Industry Scene: Entertainment Livestream</h3>
                 <div class="cards-grid cards-grid--two">
                     <div class="card">
-                        <h3 data-i18n="thesis.why_live">Why Livestream?</h3>
-                        <p data-i18n="thesis.why_live_desc">Livestream is the hardest controllability testbed — content changes every second, feedback is real-time, and three stakeholders (user, streamer, platform) compete for every recommendation slot. If controllability works here, it works anywhere.</p>
+                        <h3 data-i18n="thesis.solve">What We Solve</h3>
+                        <table class="table">
+                            <thead><tr><th data-i18n="thesis.problem">Problem</th><th data-i18n="thesis.solution">Solution</th></tr></thead>
+                            <tbody>
+                                <tr><td data-i18n="thesis.p1">Content changes every second</td><td data-i18n="thesis.s1">Item Control: Segment Semantic ID encodes 30s snapshots</td></tr>
+                                <tr><td data-i18n="thesis.p2">10min+ sessions need transition control</td><td data-i18n="thesis.s2">Timing Interface: Mid-stream transition optimization</td></tr>
+                                <tr><td data-i18n="thesis.p3">Gifts/comments arrive in real-time</td><td data-i18n="thesis.s3">Feedback Interface: Real-time signal injection into decoding</td></tr>
+                                <tr><td data-i18n="thesis.p4">Streamers need fair exposure to survive</td><td data-i18n="thesis.s4">Business Target: Cold-start fairness as first-class constraint</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="card">
                         <h3 data-i18n="thesis.metrics">Core Metrics</h3>
@@ -182,17 +190,17 @@
                     </div>
                 </div>
 
-                <h3 style="margin-top:2rem;margin-bottom:12px" data-i18n="overview.live_heading">Why Livestream Is the Hardest Case</h3>
+                <h3 style="margin-top:2rem;margin-bottom:12px" data-i18n="overview.live_heading">Livestream Problems We Address</h3>
                 <div class="table-wrapper">
                     <table class="table">
                         <thead>
-                            <tr><th data-i18n="overview.property">Property</th><th data-i18n="overview.static_rec">Static Rec</th><th data-i18n="overview.live_rec">Livestream</th></tr>
+                            <tr><th data-i18n="overview.property">Problem</th><th data-i18n="overview.static_rec">Without Controllability</th><th data-i18n="overview.live_rec">With Our Taxonomy</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong data-i18n="overview.dynamic">Content Dynamism</strong></td><td data-i18n="overview.dynamic_s">Attributes fixed</td><td data-i18n="overview.dynamic_l">Changes every second</td></tr>
-                            <tr><td><strong data-i18n="overview.engage">Engagement Depth</strong></td><td data-i18n="overview.engage_s">Single click/purchase</td><td data-i18n="overview.engage_l">10min+ continuous viewing</td></tr>
-                            <tr><td><strong data-i18n="overview.realtime">Real-time Feedback</strong></td><td data-i18n="overview.realtime_s">Post-consumption rating</td><td data-i18n="overview.realtime_l">Comments, gifts arrive during consumption</td></tr>
-                            <tr><td><strong data-i18n="overview.creator">Creator Ecosystem</strong></td><td data-i18n="overview.creator_s">Supply stable</td><td data-i18n="overview.creator_l">Streamer cold-start, exposure fairness</td></tr>
+                            <tr><td><strong data-i18n="overview.dynamic">Dynamic Content</strong></td><td data-i18n="overview.dynamic_s">Recommend stale snapshots, miss high-light moments</td><td data-i18n="overview.dynamic_l">Segment SID captures real-time state → recommend at peak moments</td></tr>
+                            <tr><td><strong data-i18n="overview.engage">Deep Engagement</strong></td><td data-i18n="overview.engage_s">One-shot ranking, no session awareness</td><td data-i18n="overview.engage_l">Timing control decides when to transition between streams</td></tr>
+                            <tr><td><strong data-i18n="overview.realtime">Real-time Signals</strong></td><td data-i18n="overview.realtime_s">Feedback only used in post-processing</td><td data-i18n="overview.realtime_l">Signals injected into decoding (PRM) for immediate response</td></tr>
+                            <tr><td><strong data-i18n="overview.creator">Creator Ecosystem</strong></td><td data-i18n="overview.creator_s">New streamers starve, top dominate</td><td data-i18n="overview.creator_l">Business constraints enforce cold-start fairness in generation</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -238,7 +246,7 @@
                         <div class="insight" data-i18n="user.insight">Key Insight: OxygenREC's Contextual Reasoning Instructions bridge natural language to generative backbone.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.user_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.user_desc">Gift propensity, entertainment mood, watch duration intent. Gift history provides a much stronger preference signal than clicks — a user who gifts ¥100 to a singer has expressed far more intent than one who clicked.</p>
+                            <p data-i18n="ls.user_desc"><strong>Problem:</strong> Gift propensity is the strongest preference signal but ignored by click-based models. <strong>Solution:</strong> Preference optimization on gift-weighted pairs captures true entertainment preference — a ¥100 gift expresses far more intent than a click.</p>
                         </div>
                     </div>
                 </div>
@@ -262,7 +270,7 @@
                         <div class="insight" data-i18n="item.insight">Key Insight: Semantic ID hierarchy enables coarse-to-fine control.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.item_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.item_desc">A livestream is not one item — it's a sequence of evolving 30s micro-items (Foresight Semantic ID segments). Controlling "when to recommend" (during high-light moments) is where real value lies, directly boosting both consume value and gift value.</p>
+                            <p data-i18n="ls.item_desc"><strong>Problem:</strong> A livestream is not one item — it evolves every 30s. <strong>Solution:</strong> Foresight Semantic ID encodes each segment; controlling WHEN to recommend (at high-light) directly boosts gift + consume value.</p>
                         </div>
                     </div>
                 </div>
@@ -287,7 +295,7 @@
                         <div class="insight" data-i18n="biz.insight">Key Insight: OneRanker separates interest from value optimization via task tokens.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.biz_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.biz_desc">Optimize α×consume_value + β×gift_value. Streamer ecosystem is more fragile than product catalogs — a streamer who gets no exposure will quit (unlike a product that stays in inventory). Cold-start fairness is a first-class business objective.</p>
+                            <p data-i18n="ls.biz_desc"><strong>Problem:</strong> Streamers who get no exposure quit — unlike products that stay in inventory. <strong>Solution:</strong> Business-constrained decoding enforces cold-start fairness during generation, not just post-hoc reranking.</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +340,7 @@
                         <div class="insight" data-i18n="timing.insight">Key Insight: PROMISE applies control at every step via Process Reward Model — enables test-time scaling.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.timing_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.timing_desc">Mid-generation timing is unique to livestream. User is watching → system must decide WHEN to surface the next stream. Interrupting during high-light hurts gift value; waiting during lull loses the user.</p>
+                            <p data-i18n="ls.timing_desc"><strong>Problem:</strong> Interrupting during high-light kills gift value; waiting during lull loses the user. <strong>Solution:</strong> Session-level RL optimizes transition timing, balancing retention against gift potential.</p>
                         </div>
                     </div>
                 </div>
@@ -358,7 +366,7 @@
                         <div class="insight" data-i18n="gran.insight">Key Insight: Hierarchical Semantic IDs naturally support multi-granularity — a built-in control knob.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.gran_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.gran_desc">Foresight's 30s segment Semantic ID enables fine-grained control — distinguish "this streamer right now" from "5 minutes ago." Three levels: genre (coarse) → streamer style (medium) → this-30s-moment (fine).</p>
+                            <p data-i18n="ls.gran_desc"><strong>Problem:</strong> Recommending "this streamer" is too coarse — boring at minute 5, exciting at minute 8. <strong>Solution:</strong> 3-level granularity (genre → style → this-30s-moment) via hierarchical SID.</p>
                         </div>
                     </div>
                 </div>
@@ -384,7 +392,7 @@
                         <div class="insight" data-i18n="expl.insight">Key Insight: PRM scores could serve as step-level explanations — surfacing them is an open opportunity.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.expl_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.expl_desc">Temporal explanations become possible: "why now" is as important as "why this streamer." Examples: "This streamer is in a high-energy moment" / "500 viewers are gifting right now" (social proof).</p>
+                            <p data-i18n="ls.expl_desc"><strong>Problem:</strong> Users can't tell why THIS stream was shown NOW. <strong>Solution:</strong> Temporal explanations — "high-energy moment" / "500 viewers gifting" — leverage real-time state for social-proof explanations.</p>
                         </div>
                     </div>
                 </div>
@@ -410,7 +418,7 @@
                         <div class="insight" data-i18n="fb.insight">Key Insight: Most feedback currently goes through conditioning — closing the loop via latent/decoding mechanisms is unexplored.</div>
                         <div class="livestream-mapping">
                             <h4 data-i18n="ls.fb_title">🎬 In Livestream</h4>
-                            <p data-i18n="ls.fb_desc">Feedback is continuous and real-time, not post-hoc. A gift mid-stream is both a business metric (revenue) AND a feedback signal (user likes this). This creates a closed loop: feedback → update recommendation of the SAME stream to other users.</p>
+                            <p data-i18n="ls.fb_desc"><strong>Problem:</strong> A gift mid-stream is both revenue AND preference signal, but systems treat it as revenue only. <strong>Solution:</strong> Dual-use feedback loop — same gift signal updates recommendations of this stream to OTHER users in real-time.</p>
                         </div>
                     </div>
                 </div>
@@ -440,7 +448,7 @@
                         </ul>
                         <div class="livestream-mapping livestream-mapping--compact">
                             <strong data-i18n="ls.mech_live">🎬 Livestream:</strong>
-                            <span data-i18n="ls.cond_live">Segment Semantic ID (Foresight), streamer profile tokens, real-time state embedding (energy/topic/interaction)</span>
+                            <span data-i18n="ls.cond_live">Dynamic content → Segment SID + real-time state embedding (energy/topic/interaction) as conditioning inputs</span>
                         </div>
                     </div>
 
@@ -455,7 +463,7 @@
                         </ul>
                         <div class="livestream-mapping livestream-mapping--compact">
                             <strong data-i18n="ls.mech_live">🎬 Livestream:</strong>
-                            <span data-i18n="ls.pref_live">Gift-based DPO (gifted > non-gifted), Hierarchical DPO (大额 > 小额 > 长看 > 评论 > 跳过), joint α×L_gift + β×L_consume training</span>
+                            <span data-i18n="ls.pref_live">Rich preference hierarchy (大额 > 小额 > 评论 > 点击 > 跳过) → Gift-weighted Listwise DPO with continuous reward signal</span>
                         </div>
                     </div>
 
@@ -472,7 +480,7 @@
                         </ul>
                         <div class="livestream-mapping livestream-mapping--compact">
                             <strong data-i18n="ls.mech_live">🎬 Livestream:</strong>
-                            <span data-i18n="ls.dec_live">High-light PRM (LiveForesighter moment detection), state-aware beam search weighted by live/energy/interaction, crowd gift/comment rate as beam score</span>
+                            <span data-i18n="ls.dec_live">Need real-time quality signal → High-light PRM (LiveForesighter) scores each moment; crowd gift/comment rate as beam score</span>
                         </div>
                     </div>
 
@@ -487,7 +495,7 @@
                         </ul>
                         <div class="livestream-mapping livestream-mapping--compact">
                             <strong data-i18n="ls.mech_live">🎬 Livestream:</strong>
-                            <span data-i18n="ls.post_live">Multi-signal reranking (relevance + gift propensity + consume value + fairness), real-time state refresh (drop ended streams, boost high-light, penalize lull), streamer exposure equity</span>
+                            <span data-i18n="ls.post_live">Multi-signal balancing → Rerank with α×relevance + β×gift_propensity + γ×consume_pred + δ×fairness; real-time state refresh</span>
                         </div>
                     </div>
                 </div>
@@ -933,6 +941,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260427"></script>
+    <script src="script.js?v=20260427g"></script>
 </body>
 </html>

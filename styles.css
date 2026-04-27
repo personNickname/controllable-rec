@@ -243,6 +243,33 @@ body {
   font-size: 0.9rem;
 }
 
+/* Livestream Mapping Blocks */
+.livestream-mapping {
+  margin-top: 16px;
+  padding: 16px;
+  border-left: 3px solid var(--theme-accent);
+  background: var(--theme-bg-alt);
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+.section--alt .livestream-mapping {
+  background: var(--theme-bg);
+}
+.livestream-mapping h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--theme-accent);
+  margin-bottom: 8px;
+}
+.livestream-mapping--compact {
+  margin-top: 12px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.livestream-mapping--compact strong {
+  color: var(--theme-accent);
+}
+
 .table th, .table td {
   padding: 12px;
   text-align: left;

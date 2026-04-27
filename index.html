@@ -14,12 +14,14 @@
     <header class="header header--left">
         <a href="/" class="header__logo">Controllable Rec</a>
         <nav class="header__nav">
+            <a href="#thesis" data-i18n="nav.thesis">Thesis</a>
             <a href="#overview" data-i18n="nav.overview">Overview</a>
             <a href="#targets" data-i18n="nav.targets">Targets</a>
             <a href="#interfaces" data-i18n="nav.interfaces">Interfaces</a>
             <a href="#mechanisms" data-i18n="nav.mechanisms">Mechanisms</a>
             <a href="#papers" data-i18n="nav.papers">Papers</a>
             <a href="#gaps" data-i18n="nav.gaps">Gaps</a>
+            <a href="#priorities" data-i18n="nav.priorities">Priorities</a>
             <a href="livestream.html" style="color:var(--theme-accent)">Livestream ↗</a>
         </nav>
         <div class="lang-switcher">
@@ -56,6 +58,45 @@
     </section>
 
     <main>
+        <!-- Thesis Section -->
+        <section id="thesis" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="thesis.title">Direction Thesis</h2>
+                <p class="section__intro" data-i18n="thesis.intro">Why controllability is THE bottleneck for generative recommendation — not generation quality.</p>
+
+                <div class="cards-grid cards-grid--two">
+                    <div class="card">
+                        <h3 data-i18n="thesis.why_gen">Why Generative Rec Now?</h3>
+                        <p data-i18n="thesis.why_gen_desc">Traditional rec scores and ranks from a candidate set. Generative rec produces item sequences directly. This shifts the selection space to the generator — making control a first-class problem, not an afterthought.</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="thesis.why_ctrl">Why Controllability Is the Bottleneck?</h3>
+                        <p data-i18n="thesis.why_ctrl_desc">Generation quality is proven (TIGER/GPR/OxygenREC in production). But generation without precise control can't replace traditional pipelines — can't enforce business constraints, can't guarantee fairness, can't respond to feedback.</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="thesis.diff">How It Differs from LLM Alignment</h3>
+                        <p data-i18n="thesis.diff_desc">LLM alignment is single-user generation. Rec controllability is multi-stakeholder constrained search — user, platform, and creator interests conflict. RLHF/Constitutional AI don't directly apply.</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="thesis.moat">Where the Moat Is</h3>
+                        <p data-i18n="thesis.moat_desc">Large models will level generation capability. Differentiation comes from the controllability stack — verifiable constraints, calibrated tradeoffs, and rollback-able decisions. This is where engineering and business moats intersect.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:2rem" data-i18n="thesis.insights_title">Core Insights</h3>
+                <div class="cards-grid cards-grid--one">
+                    <div class="card">
+                        <ol style="margin:0;padding-left:1.2em">
+                            <li data-i18n="thesis.i1">Semantic ID gives controllability its first "structured control interface" — the key leap over pure ID generation. Hierarchical codebooks are native control knobs.</li>
+                            <li data-i18n="thesis.i2">Training-time control (Pref Opt) internalizes tradeoffs — fast but rigid. Inference-time control (Constrained Decoding) externalizes tradeoffs — slower but tunable. They complement, not replace.</li>
+                            <li data-i18n="thesis.i3">The real engineering value isn't explainability — it's verifiable, constrainable, rollback-able control. Can you prove it worked? Can you undo it?</li>
+                            <li data-i18n="thesis.i4">Future differentiation comes from the controllability stack, not the generation backbone. Generation will be commoditized; precise control won't.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Overview Section -->
         <section id="overview" class="section">
             <div class="container">
@@ -373,7 +414,7 @@
         <section id="papers" class="section">
             <div class="container">
                 <h2 class="section__title" data-i18n="papers.title">Paper Mapping</h2>
-                <p class="section__intro" data-i18n="papers.intro">39 papers mapped to the 3-axis taxonomy. Highlighted rows indicate comprehensive coverage.</p>
+                <p class="section__intro" data-i18n="papers.intro">39 papers mapped to all 3 axes of the taxonomy: Target, Interface, and Mechanism. Highlighted rows indicate comprehensive coverage.</p>
 
                 <div class="section__image">
                     <img src="images/paper-heatmap.png" alt="Paper Coverage: Target × Mechanism Matrix" loading="lazy">
@@ -385,13 +426,18 @@
                             <tr>
                                 <th>Paper</th>
                                 <th colspan="3" style="text-align:center; border-bottom: 2px solid #6366f1;">Target</th>
-                                <th colspan="4" style="text-align:center; border-bottom: 2px solid #6366f1;">Mechanism</th>
+                                <th colspan="4" style="text-align:center; border-bottom: 2px solid #10b981;">Interface</th>
+                                <th colspan="4" style="text-align:center; border-bottom: 2px solid #f59e0b;">Mechanism</th>
                             </tr>
                             <tr>
                                 <th></th>
                                 <th>User</th>
                                 <th>Item</th>
                                 <th>Biz</th>
+                                <th>Tim</th>
+                                <th>Gran</th>
+                                <th>Expl</th>
+                                <th>Fdbk</th>
                                 <th>Cond</th>
                                 <th>Pref</th>
                                 <th>Dec</th>
@@ -399,42 +445,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td></tr>
-                            <tr><td>PROMISE</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
-                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
-                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>P5</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
-                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>PEPLER</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>UCEpic</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td></tr>
-                            <tr><td>PDU</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>UserControllable</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>PaInvRL</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td></tr>
-                            <tr><td>LMIndexer</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>AlignLLM</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>MMGRec</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>DeepPRL</td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td></tr>
-                            <tr><td>LAMIA</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>RLHS</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>WRO</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>Rec-R1</td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>SIDStability</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>Curio</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>HF4Rec</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td></tr>
-                            <tr><td>AutoCDSR</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>SIDE</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>PROMISE</strong></td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>P5</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>PEPLER</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>UCEpic</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>PDU</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>UserControllable</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>PaInvRL</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td>✓</td></tr>
+                            <tr><td>LMIndexer</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>AlignLLM</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>TRIP</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>MMGRec</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DeepPRL</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td></tr>
+                            <tr><td>LAMIA</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RLHS</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>WRO</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>Rec-R1</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>SIDStability</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>Curio</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>HF4Rec</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td></tr>
+                            <tr><td>AutoCDSR</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>MTMH</td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>SIDE</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -560,6 +608,114 @@
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span>LoopCTR, PROMISE</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Priorities Section -->
+        <section id="priorities" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="pri.title">Strategic Priorities</h2>
+                <p class="section__intro" data-i18n="pri.intro">From research gaps to investment decisions: what to build, what to skip, and why this order.</p>
+
+                <div class="gaps-grid">
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">P0</span>
+                        <h3 data-i18n="pri.p0_biz_title">Business-Constrained Decoding</h3>
+                        <p data-i18n="pri.p0_biz_desc">Minimum bar for gen-rec to go online. Without business constraint enforcement, it cannot replace traditional pipelines. Technically mature, high feasibility.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="pri.timeline_short">1-3 months</span>
+                            <span data-i18n="pri.value_high">High Business Value</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">P0</span>
+                        <h3 data-i18n="pri.p0_attr_title">Explicit Attribute Control</h3>
+                        <p data-i18n="pri.p0_attr_desc">"Show items with attribute X and price < Y" — fundamental capability with near-total blank in generative retrieval. Blocks gen-rec from replacing traditional search.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="pri.timeline_mid">3-6 months</span>
+                            <span data-i18n="pri.value_high">High Business Value</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--high">
+                        <span class="gap__priority">P0</span>
+                        <h3 data-i18n="pri.p0_eval_title">Controllability Evaluation</h3>
+                        <p data-i18n="pri.p0_eval_desc">Evidence infrastructure: control success rate, relevance tax, Pareto fronts, stability, rollback-ability. Without this, controllability stays at "looks like it works."</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="pri.timeline_short">1-3 months</span>
+                            <span data-i18n="pri.value_infra">Infrastructure</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority">P1</span>
+                        <h3 data-i18n="pri.p1_fb_title">Real-Time Feedback Loop</h3>
+                        <p data-i18n="pri.p1_fb_desc">High impact but high complexity — not just a model problem. Involves system architecture, interaction product, and data pipelines. Build on P0 constraints first.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="pri.timeline_long">6-12 months</span>
+                            <span data-i18n="pri.value_high">High Business Value</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card gap-card--medium">
+                        <span class="gap__priority">P1</span>
+                        <h3 data-i18n="pri.p1_stake_title">Multi-Stakeholder Balance</h3>
+                        <p data-i18n="pri.p1_stake_desc">User-platform-creator balance is key to long-term ecosystem health. More of a mechanism design problem than a pure algorithm problem.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--high" data-i18n="pri.timeline_long">6-12 months</span>
+                            <span data-i18n="pri.value_med">Medium Business Value</span>
+                        </div>
+                    </div>
+
+                    <div class="gap-card">
+                        <span class="gap__priority" style="background:var(--theme-text-muted)">P2</span>
+                        <h3 data-i18n="pri.p2_expl_title">Explainable Generation Paths</h3>
+                        <p data-i18n="pri.p2_expl_desc">High academic value, low business ROI. Users need correct results, not Semantic ID path explanations. May have value as internal debugging tool only.</p>
+                        <div class="gap__meta">
+                            <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
+                            <span data-i18n="pri.value_low">Low Business Value</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What We Don't Do -->
+                <h3 style="margin-top:2rem" data-i18n="pri.dont_title">What We Don't Do</h3>
+                <div class="table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <tr><th data-i18n="pri.direction">Direction</th><th data-i18n="pri.why_not">Why Not</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td data-i18n="pri.no_gen">Pure generation accuracy race</td><td data-i18n="pri.no_gen_why">Large models will level generation capability — differentiation isn't here</td></tr>
+                            <tr><td data-i18n="pri.no_llm">Direct LLM alignment transfer</td><td data-i18n="pri.no_llm_why">Rec is a multi-stakeholder problem; RLHF/Constitutional AI don't directly apply</td></tr>
+                            <tr><td data-i18n="pri.no_expl">Over-invest in explainability</td><td data-i18n="pri.no_expl_why">Low user ROI, limited help for launch decisions</td></tr>
+                            <tr><td data-i18n="pri.no_online">Full online learning</td><td data-i18n="pri.no_online_why">System complexity too high; use inference-time constraints + periodic retraining first</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Evaluation Framework -->
+                <h3 style="margin-top:2rem" data-i18n="pri.eval_title">Evaluation Framework</h3>
+                <p data-i18n="pri.eval_intro">How to prove controllability works — without evaluation, it stays at "looks like it controls."</p>
+                <div class="cards-grid cards-grid--two">
+                    <div class="card">
+                        <h3 data-i18n="pri.eval_csr">Control Success Rate</h3>
+                        <p data-i18n="pri.eval_csr_desc">CSR = items satisfying constraints / generated items. The fundamental metric: did the control actually work?</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="pri.eval_tax">Relevance Tax</h3>
+                        <p data-i18n="pri.eval_tax_desc">(NDCG_unconstrained - NDCG_constrained) / NDCG_unconstrained. Good systems: < 5% tax for > 90% control success.</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="pri.eval_pareto">Pareto Front</h3>
+                        <p data-i18n="pri.eval_pareto_desc">Multi-objective tradeoff curves: relevance vs diversity, satisfaction vs revenue, accuracy vs fairness.</p>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="pri.eval_stable">Stability & Rollback</h3>
+                        <p data-i18n="pri.eval_stable_desc">Consistency across runs, calibrated control strength, and safe rollback without irreversible side effects.</p>
                     </div>
                 </div>
             </div>

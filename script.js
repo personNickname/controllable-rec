@@ -44,6 +44,12 @@ const translations = {
         'overview.interface': 'Interface',
         'overview.mechanisms': 'Axis 3: Control Mechanism',
         'overview.mechanisms_q': 'How is control implemented?',
+        'overview.axes_heading': 'Three Axes',
+        'overview.pipeline_heading': 'Control Mechanisms Pipeline',
+        'overview.cond_brief': 'Control tokens, instructions, embeddings prepended to steer generation.',
+        'overview.pref_brief': 'Aligning generation with preferences via DPO/RLHF.',
+        'overview.dec_brief': 'PRM/ORM guidance and code-level constraints during inference.',
+        'overview.post_brief': 'Reranking, filtering, and diversifying after decoder output.',
         'overview.mechanism': 'Mechanism',
         'overview.stage': 'Stage',
         // Overview — Target table
@@ -178,7 +184,6 @@ const translations = {
         'mech.post_1': 'Value Reranking',
         'mech.post_2': 'MMR Diversity',
         'mech.post_3': 'Fairness Filtering',
-        'mech.multi_note': 'Multi-Objective is a cross-cutting attribute \u2014 any pipeline stage can optimize single or multiple objectives. See individual mechanism cards for multi-objective variants.',
         // Papers section
         'papers.title': 'Paper Mapping',
         'papers.intro': '39 papers mapped to all 3 axes of the taxonomy: Target, Interface, and Mechanism. Highlighted rows indicate comprehensive coverage.',
@@ -305,6 +310,12 @@ const translations = {
         'overview.interface': '接口',
         'overview.mechanisms': '轴3：控制机制',
         'overview.mechanisms_q': '控制如何实现？',
+        'overview.axes_heading': '三个轴',
+        'overview.pipeline_heading': '控制机制流水线',
+        'overview.cond_brief': '通过控制令牌、指令、嵌入前置来引导生成。',
+        'overview.pref_brief': '通过DPO/RLHF使生成与偏好对齐。',
+        'overview.dec_brief': '推理时的PRM/ORM引导和代码级约束。',
+        'overview.post_brief': '解码器输出后的重排序、过滤和多样化。',
         'overview.mechanism': '机制',
         'overview.stage': '阶段',
         // Overview — Target table
@@ -439,7 +450,6 @@ const translations = {
         'mech.post_1': '价值重排序',
         'mech.post_2': 'MMR多样性',
         'mech.post_3': '公平性过滤',
-        'mech.multi_note': '多目标是一个横切属性——任何流水线阶段都可以优化单个或多个目标。详见各机制卡片中的多目标变体。',
         // Papers section
         'papers.title': '论文映射',
         'papers.intro': '39篇论文映射到分类体系的全部3个轴：目标、接口和机制。高亮行表示覆盖全面。',

@@ -43,7 +43,7 @@
                     <span class="stat__label" data-i18n="hero.interfaces">Interfaces</span>
                 </div>
                 <div class="stat">
-                    <span class="stat__number">5</span>
+                    <span class="stat__number">4</span>
                     <span class="stat__label" data-i18n="hero.mechanisms">Mechanisms</span>
                 </div>
                 <div class="stat">
@@ -100,10 +100,9 @@
                             </thead>
                             <tbody>
                                 <tr><td data-i18n="mech.conditioning">Conditioning</td><td data-i18n="stage.input">Input</td></tr>
-                                <tr><td data-i18n="mech.latent">Latent Manipulation</td><td data-i18n="stage.encoding">Encoding</td></tr>
                                 <tr><td data-i18n="mech.preference">Preference Optimization</td><td data-i18n="stage.training">Training</td></tr>
                                 <tr><td data-i18n="mech.decoding">Constrained Decoding</td><td data-i18n="stage.generation">Generation</td></tr>
-                                <tr><td data-i18n="mech.multi">Multi-Objective</td><td data-i18n="stage.architecture">Architecture</td></tr>
+                                <tr><td data-i18n="mech.post">Post-Processing</td><td data-i18n="stage.post">Post-generation</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -303,24 +302,13 @@
                     <div class="mechanism-card">
                         <span class="mechanism__stage" data-i18n="stage.input">Input</span>
                         <h3 data-i18n="mech.conditioning">Conditioning</h3>
-                        <p data-i18n="mech.cond_desc">Prepending tokens, instructions, or embeddings to steer generation.</p>
+                        <p data-i18n="mech.cond_desc">Prepending tokens, instructions, or embeddings to steer generation. Includes code composition from Semantic IDs.</p>
                         <ul>
                             <li><strong data-i18n="mech.cond_1">Control Tokens</strong> — OxygenREC, OneRanker, NEO</li>
                             <li><strong data-i18n="mech.cond_2">Instruction Following</strong> — SIGMA, InstructRec, P5, ITDR</li>
                             <li><strong data-i18n="mech.cond_3">Embedding Injection</strong> — CoLLM, LLaRA, AlphaFuse, MME-SID</li>
                             <li><strong data-i18n="mech.cond_4">Prompt Tuning</strong> — Rec-R1, GRLM, LLMXRec</li>
-                        </ul>
-                    </div>
-
-                    <div class="mechanism-card">
-                        <span class="mechanism__stage" data-i18n="stage.encoding">Encoding</span>
-                        <h3 data-i18n="mech.latent">Latent Manipulation</h3>
-                        <p data-i18n="mech.lat_desc">Editing discrete codes or latent representations.</p>
-                        <ul>
-                            <li><strong data-i18n="mech.lat_1">Semantic IDs</strong> — TIGER, GPR, PLUM, DAS, SIDE</li>
-                            <li><strong data-i18n="mech.lat_2">RQ-VAE Variants</strong> — DQRec, MMGRec, PRISM, DOS</li>
-                            <li><strong data-i18n="mech.lat_3">Context-Aware</strong> — ActionPiece, CoFiRec, HiD-VAE</li>
-                            <li><strong data-i18n="mech.lat_4">Cross-Modal</strong> — MACRec, GateSID, LMIndexer</li>
+                            <li><strong data-i18n="mech.cond_5">Code Composition</strong> — TIGER, RQ-VAE, ActionPiece, SIDE</li>
                         </ul>
                     </div>
 
@@ -338,32 +326,29 @@
                     <div class="mechanism-card">
                         <span class="mechanism__stage" data-i18n="stage.generation">Generation</span>
                         <h3 data-i18n="mech.decoding">Constrained Decoding</h3>
-                        <p data-i18n="mech.dec_desc">Steering output via PRM/ORM guidance during inference.</p>
+                        <p data-i18n="mech.dec_desc">Steering output via PRM/ORM guidance, code-level constraints, and multi-head blending during inference.</p>
                         <ul>
                             <li><strong data-i18n="mech.dec_1">Process Reward</strong> — PROMISE, ChatShopBuddy, DC-W2S</li>
                             <li><strong data-i18n="mech.dec_4">Outcome Reward</strong> — SIDReasoner, SubSearch, ReflectRM</li>
                             <li><strong data-i18n="mech.dec_2">Guided Beam Search</strong> — UniRec, NEO, MindRec, HSRL</li>
                             <li><strong data-i18n="mech.dec_3">Refined Scoring</strong> — RankGR, GRank, Target-constrained</li>
+                            <li><strong data-i18n="mech.dec_5">Semantic ID Constraints</strong> — TIGER, GPR (fix top-level codes)</li>
                         </ul>
                     </div>
 
-                    <div class="mechanism-card mechanism-card--wide">
-                        <span class="mechanism__stage" data-i18n="stage.architecture">Architecture</span>
-                        <h3 data-i18n="mech.multi">Multi-Objective Control</h3>
-                        <p data-i18n="mech.multi_desc">Balancing conflicting objectives through task tokens, separate heads, or Pareto optimization.</p>
-                        <div class="mechanism__methods">
-                            <span class="tag" data-i18n="mech.multi_1">Task Tokens — OneRanker, SIGMA</span>
-                            <span class="tag" data-i18n="mech.multi_2">Multi-Head — GPR, DRGrad, SMES</span>
-                            <span class="tag" data-i18n="mech.multi_3">Pareto — PreferRec, Deep Pareto RL, AutoCDSR</span>
-                        </div>
-                        <div class="mechanism__tradeoffs">
-                            <span class="tradeoff" data-i18n="mech.trade_1">Interest vs Value</span>
-                            <span class="tradeoff" data-i18n="mech.trade_2">Diversity vs Relevance</span>
-                            <span class="tradeoff" data-i18n="mech.trade_3">Short-term vs Long-term</span>
-                            <span class="tradeoff" data-i18n="mech.trade_4">Accuracy vs Fairness</span>
-                        </div>
+                    <div class="mechanism-card">
+                        <span class="mechanism__stage" data-i18n="stage.post">Post-generation</span>
+                        <h3 data-i18n="mech.post">Post-Processing</h3>
+                        <p data-i18n="mech.post_desc">Reranking, filtering, and diversifying candidates after decoder output.</p>
+                        <ul>
+                            <li><strong data-i18n="mech.post_1">Value Reranking</strong> — GPR, PDU, DeepPRL</li>
+                            <li><strong data-i18n="mech.post_2">MMR Diversity</strong> — PROMISE, AutoCDSR</li>
+                            <li><strong data-i18n="mech.post_3">Fairness Filtering</strong> — Open problem</li>
+                        </ul>
                     </div>
                 </div>
+
+                <p class="section__note"><em data-i18n="mech.multi_note">Multi-Objective is a cross-cutting attribute — any pipeline stage can optimize single or multiple objectives. See individual mechanism cards for multi-objective variants.</em></p>
             </div>
         </section>
 
@@ -379,7 +364,7 @@
                             <tr>
                                 <th>Paper</th>
                                 <th colspan="3" style="text-align:center; border-bottom: 2px solid #6366f1;">Target</th>
-                                <th colspan="5" style="text-align:center; border-bottom: 2px solid #6366f1;">Mechanism</th>
+                                <th colspan="4" style="text-align:center; border-bottom: 2px solid #6366f1;">Mechanism</th>
                             </tr>
                             <tr>
                                 <th></th>
@@ -387,49 +372,48 @@
                                 <th>Item</th>
                                 <th>Biz</th>
                                 <th>Cond</th>
-                                <th>Lat</th>
                                 <th>Pref</th>
                                 <th>Dec</th>
-                                <th>Multi</th>
+                                <th>Post</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
-                            <tr><td>PROMISE</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
-                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td></tr>
-                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>P5</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td></tr>
-                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>PEPLER</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>UCEpic</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>PDU</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>UserControllable</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td>PaInvRL</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>LMIndexer</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>AlignLLM</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>MMGRec</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>DeepPRL</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>LAMIA</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>RLHS</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>WRO</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>Rec-R1</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>SIDStability</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
-                            <tr><td>Curio</td><td>✓</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
-                            <tr><td>HF4Rec</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>AutoCDSR</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
-                            <tr><td>SIDE</td><td></td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>OxygenREC</strong></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>TIGER</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DPO</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr class="highlight"><td><strong>RankGR</strong></td><td></td><td>✓</td><td>✓</td><td></td><td>✓</td><td>✓</td><td></td></tr>
+                            <tr><td>PROMISE</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>GPR</strong></td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+                            <tr class="highlight"><td><strong>OneRanker</strong></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>P5</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>InstructRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>VQ-VAE</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RQ-VAE</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>ActionPiece</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>GRank</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>CoLLM</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>LLaRA</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RLMRec</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DiffuMIN</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>PEPLER</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>Chat-REC</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>UCEpic</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td></tr>
+                            <tr><td>PDU</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>UserControllable</td><td>✓</td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>PaInvRL</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td>✓</td></tr>
+                            <tr><td>LMIndexer</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>AlignLLM</td><td>✓</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>MMGRec</td><td>✓</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>DeepPRL</td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td></tr>
+                            <tr><td>LAMIA</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>RLHS</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>WRO</td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>Rec-R1</td><td>✓</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>SIDStability</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+                            <tr><td>Curio</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+                            <tr><td>HF4Rec</td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td><td>✓</td></tr>
+                            <tr><td>AutoCDSR</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+                            <tr><td>SIDE</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -458,7 +442,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.fair_title">Diversity and Fairness</h3>
                         <p data-i18n="gap.fair_desc">Does autoregressive generation amplify popularity bias? How to enforce exposure equity?</p>
-                        <div class="gap__axes">Business × any × Decoding/Multi-Obj</div>
+                        <div class="gap__axes">Business × any × Decoding/Post</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span>PROMISE (partial)</span>
@@ -469,7 +453,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.stake_title">Multi-Stakeholder Balance</h3>
                         <p data-i18n="gap.stake_desc">User, business, and creator objectives. Creator welfare is ignored in current systems.</p>
-                        <div class="gap__axes">all Targets × any × Multi-Objective</div>
+                        <div class="gap__axes">all Targets × any × Post-Processing</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span>GPR, OneRanker (partial)</span>
@@ -480,7 +464,7 @@
                         <span class="gap__priority" data-i18n="gap.high">High Impact</span>
                         <h3 data-i18n="gap.online_title">Online Learning for Semantic IDs</h3>
                         <p data-i18n="gap.online_desc">How to update Semantic IDs with streaming data? Current systems require batch retraining.</p>
-                        <div class="gap__axes">Item × Feedback × Latent</div>
+                        <div class="gap__axes">Item × Feedback × Conditioning</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span data-i18n="gap.no_papers">No papers yet</span>
@@ -513,7 +497,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.explain_title">Explainable Generation Path</h3>
                         <p data-i18n="gap.explain_desc">Why did the model choose this Semantic ID sequence? Generation path explanation unexplored.</p>
-                        <div class="gap__axes">any × Explainability × Latent</div>
+                        <div class="gap__axes">any × Explainability × Conditioning</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span>PEPLER (final only)</span>
@@ -524,7 +508,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.drift_title">Semantic Drift in Hierarchy</h3>
                         <p data-i18n="gap.drift_desc">Errors in high-level tokens propagate irreversibly into wrong semantic subspaces.</p>
-                        <div class="gap__axes">Item × Granularity × Latent/Decoding</div>
+                        <div class="gap__axes">Item × Granularity × Conditioning/Decoding</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="gap.medium_diff">Medium Difficulty</span>
                             <span>PROMISE (PRM)</span>
@@ -535,7 +519,7 @@
                         <span class="gap__priority" data-i18n="gap.medium">Medium Impact</span>
                         <h3 data-i18n="gap.cross_title">Cross-Domain Transfer</h3>
                         <p data-i18n="gap.cross_desc">Can Semantic IDs trained in one domain transfer to another?</p>
-                        <div class="gap__axes">Item × any × Latent</div>
+                        <div class="gap__axes">Item × any × Conditioning</div>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="gap.high_diff">High Difficulty</span>
                             <span data-i18n="gap.no_papers">No papers yet</span>
@@ -566,6 +550,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260424"></script>
+    <script src="script.js?v=20260427"></script>
 </body>
 </html>

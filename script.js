@@ -25,6 +25,8 @@ const translations = {
         'nav.gaps': 'Gaps',
         'nav.thesis': 'Thesis',
         'nav.priorities': 'Priorities',
+        'nav.business': 'Business',
+        'nav.deployment': 'Deployment',
         // Hero
         'hero.title': 'Controllable Recommendation Generation',
         'hero.tagline': 'A 3-axis taxonomy and research synthesis of control mechanisms in generative recommendation systems',
@@ -37,6 +39,7 @@ const translations = {
         // Overview
         'overview.title': 'Overview',
         'overview.intro': 'How can we steer what a generative recommender produces? This 3-axis taxonomy organizes control along orthogonal dimensions: what to steer (Target), how to deliver control (Interface), and how to implement it (Mechanism).',
+        'overview.punchline': 'Without enforceable control, gen-rec cannot replace production pipelines.',
         'overview.targets': 'Axis 1: Control Target',
         'overview.targets_q': 'What entity are we steering?',
         'overview.target': 'Target',
@@ -238,6 +241,7 @@ const translations = {
         // Thesis
         'thesis.title': 'Direction Thesis',
         'thesis.intro': 'Why controllability is THE bottleneck for generative recommendation — not generation quality.',
+        'thesis.punchline': 'Generation moves selection into the model. Control becomes first-class.',
         // Three Core Problems
         'thesis.p1_title': 'P1: Non-Stationary Item Vocabulary',
         'thesis.p1_desc': 'Gen-rec (TIGER, GPR, HSTU) assumes a fixed codebook — items encoded once, Semantic IDs stable. In livestream, the same stream is a different "item" every 30 seconds. Online training achieves <5% error on dynamic items, but the mechanism is unexplained. Without understanding why, we can\'t control or guarantee it.',
@@ -335,6 +339,7 @@ const translations = {
         // Priorities
         'pri.title': 'Strategic Priorities',
         'pri.intro': 'From research gaps to investment decisions: what to build, what to skip, and why this order.',
+        'pri.punchline': 'Backbone commoditizes. Control stack differentiates.',
         'pri.p0_biz_title': 'Business-Constrained Decoding',
         'pri.p0_biz_desc': 'Minimum bar for gen-rec to go online. Without business constraint enforcement, it cannot replace traditional pipelines. Technically mature, high feasibility.',
         'pri.p0_attr_title': 'Explicit Attribute Control',
@@ -344,7 +349,7 @@ const translations = {
         'pri.p1_fb_title': 'Real-Time Feedback Loop',
         'pri.p1_fb_desc': 'High impact but high complexity — not just a model problem. Involves system architecture, interaction product, and data pipelines. Build on P0 constraints first.',
         'pri.p1_stake_title': 'Multi-Stakeholder Balance',
-        'pri.p1_stake_desc': 'User-platform-creator balance is key to long-term ecosystem health. More of a mechanism design problem than a pure algorithm problem.',
+        'pri.p1_stake_desc': 'Generative selection may amplify exposure skew more than traditional ranking — creator churn from starvation is ecosystem-level risk. Multi-stakeholder balance is a launch governance condition, not a nice-to-have.',
         'pri.p2_expl_title': 'Explainable Generation Paths',
         'pri.p2_expl_desc': 'High academic value, low business ROI. Users need correct results, not Semantic ID path explanations. May have value as internal debugging tool only.',
         'pri.timeline_short': '1-3 months',
@@ -376,10 +381,44 @@ const translations = {
         'pri.eval_pareto_desc': 'Multi-objective tradeoff curves: relevance vs diversity, satisfaction vs revenue, accuracy vs fairness.',
         'pri.eval_stable': 'Stability & Rollback',
         'pri.eval_stable_desc': 'Consistency across runs, calibrated control strength, and safe rollback without irreversible side effects.',
+        // P0 layer badges
+        'pri.p0_eval_layer': 'Foundation',
+        'pri.p0_biz_layer': 'Launch Gate',
+        'pri.p0_attr_layer': 'Capability',
+        // Business Mapping
+        'bmap.title': 'Business Mapping',
+        'bmap.intro': 'Why controllability is a business requirement, not a research luxury.',
+        'bmap.punchline': 'In livestream recommendation, uncontrolled generation doesn\'t just underperform — it fails on all three sides.',
+        'bmap.user_title': 'User (Demand)',
+        'bmap.user_desc': 'Intent is implicit, dynamic, and conflicting. Users don\'t say what they want — they fatigue, switch between explore and exploit, hold multiple interests simultaneously.',
+        'bmap.user_examples': 'Fatigue detection, explore/exploit, multi-interest',
+        'bmap.content_title': 'Content (Supply)',
+        'bmap.content_desc': 'Modality, topic, timeliness, and quality all matter — and they change in real-time. A stream that was exciting 2 minutes ago may be dead now.',
+        'bmap.content_examples': 'Genre drift, highlight vs lull, cold-start streams',
+        'bmap.platform_title': 'Platform (Ecosystem)',
+        'bmap.platform_desc': 'Platform goals are multi-objective, not single-score. Optimizing watch time alone kills gift revenue; optimizing gifts alone starves new creators.',
+        'bmap.platform_examples': 'Duration vs gift vs fairness vs creator support',
+        'bmap.conclusion': 'Generative retrieval expands flexibility, but also expands failure modes. Controllability is the governance layer that makes generative rec deployable.',
+        // Deployment Path
+        'deploy.title': 'Deployment Path',
+        'deploy.intro': 'How to get from current pipelines to controllable generation — without replacing anything overnight.',
+        'deploy.punchline': 'Not replacing the existing pipeline — layering controllability on top, one phase at a time.',
+        'deploy.p1_title': 'Evaluate & Rerank',
+        'deploy.p1_desc': 'Keep existing pipeline. Add controllability evaluation metrics and constrained reranking as a post-processing layer.',
+        'deploy.p1_adds': '+ Evaluation framework + constrained rerank',
+        'deploy.p2_title': 'Bounded Generation',
+        'deploy.p2_desc': 'Introduce constrained decoding for bounded, low-risk scenarios. Validate controllability in production with limited blast radius.',
+        'deploy.p2_adds': '+ Constrained decoding for specific verticals',
+        'deploy.p3_title': 'Expand Scope',
+        'deploy.p3_desc': 'Extend generation to attribute-aware control and integrate real-time feedback loop for broader coverage.',
+        'deploy.p3_adds': '+ Attribute-aware generation + feedback loop',
+        'deploy.p4_title': 'Full Controllable Gen',
+        'deploy.p4_desc': 'Multi-stakeholder optimization under governance constraints. Generation replaces retrieval with full controllability stack.',
+        'deploy.p4_adds': '+ Multi-stakeholder optimization + governance',
         // Footer
         'footer.title': 'Controllable Recommendation Generation',
         'footer.subtitle': '3-Axis Research Taxonomy',
-        'footer.copy': '\u00a9 2026 \u00b7 Last updated April 24'
+        'footer.copy': '\u00a9 2026 \u00b7 Last updated April 28'
     },
     zh: {
         // Nav
@@ -391,6 +430,8 @@ const translations = {
         'nav.gaps': '研究缺口',
         'nav.thesis': '方向判断',
         'nav.priorities': '战略优先级',
+        'nav.business': '业务映射',
+        'nav.deployment': '落地路径',
         // Hero
         'hero.title': '可控推荐生成',
         'hero.tagline': '生成式推荐系统中控制机制的3轴分类体系与研究综述',
@@ -404,6 +445,7 @@ const translations = {
         // Overview
         'overview.title': '概述',
         'overview.intro': '如何控制生成式推荐系统的输出？本3轴分类体系沿正交维度组织控制：控制什么（目标）、如何传递控制（接口）、如何实现控制（机制）。',
+        'overview.punchline': '没有可强制执行的控制，生成式推荐无法替代生产 pipeline。',
         'overview.targets': '轴1：控制目标',
         'overview.targets_q': '我们在控制哪个实体？',
         'overview.target': '目标',
@@ -588,6 +630,7 @@ const translations = {
         // Thesis
         'thesis.title': '方向判断',
         'thesis.intro': '为什么可控性是生成式推荐的核心瓶颈——而非生成精度。',
+        'thesis.punchline': '生成将选择过程内化到模型中。控制因此成为第一等需求。',
         // Three Core Problems
         'thesis.p1_title': 'P1：非平稳物品词表',
         'thesis.p1_desc': '生成式推荐（TIGER、GPR、HSTU）假设固定码本——物品编码一次，Semantic ID稳定。在直播中，同一直播间每30秒就是不同的"物品"。在线训练在动态物品上达到<5%错误率，但机制不明。不理解为什么，就无法控制或保证。',
@@ -702,6 +745,7 @@ const translations = {
         // Priorities
         'pri.title': '战略优先级',
         'pri.intro': '从研究缺口到投资决策：做什么、不做什么、为什么这个顺序。',
+        'pri.punchline': '主干能力会被拉平。控制栈才是差异化壁垒。',
         'pri.p0_biz_title': '业务约束解码',
         'pri.p0_biz_desc': '生成式推荐上线的最低门槛。不能执行业务约束就无法替代传统 pipeline。技术成熟，可行性高。',
         'pri.p0_attr_title': '显式属性控制',
@@ -711,7 +755,7 @@ const translations = {
         'pri.p1_fb_title': '实时反馈闭环',
         'pri.p1_fb_desc': '影响大但工程复杂度高——不只是模型问题，涉及系统架构、交互产品和数据管道。先做好P0约束，再叠加反馈。',
         'pri.p1_stake_title': '多方利益平衡',
-        'pri.p1_stake_desc': '用户-平台-创作者平衡是长期生态健康的关键。更多是机制设计问题而非纯算法问题。',
+        'pri.p1_stake_desc': '生成式选择可能比传统排序更加放大曝光倾斜——创作者因流量饥饿而流失是生态级风险。多方利益平衡是上线治理条件，不是锦上添花。',
         'pri.p2_expl_title': '可解释生成路径',
         'pri.p2_expl_desc': '学术价值高，业务收益弱。用户需要结果正确，不需要 Semantic ID 路径解释。仅作内部调试工具可能有价值。',
         'pri.timeline_short': '1-3个月',
@@ -743,10 +787,44 @@ const translations = {
         'pri.eval_pareto_desc': '多目标权衡曲线：相关性vs多样性、满意度vs收入、准确性vs公平性。',
         'pri.eval_stable': '稳定性与可回退',
         'pri.eval_stable_desc': '多次运行一致性、控制强度校准、安全回退且无不可逆副作用。',
+        // P0 layer badges
+        'pri.p0_eval_layer': '基础设施',
+        'pri.p0_biz_layer': '上线门槛',
+        'pri.p0_attr_layer': '能力拓展',
+        // Business Mapping
+        'bmap.title': '业务映射',
+        'bmap.intro': '为什么可控性是业务需求，而非研究奢侈品。',
+        'bmap.punchline': '在直播推荐中，不可控的生成不只是表现不好——它在三个方面都会失败。',
+        'bmap.user_title': '用户（需求侧）',
+        'bmap.user_desc': '意图隐式、动态且矛盾。用户不会说出自己要什么——他们会疲劳、在探索与利用之间切换、同时持有多个兴趣。',
+        'bmap.user_examples': '疲劳检测、探索/利用切换、多兴趣',
+        'bmap.content_title': '内容（供给侧）',
+        'bmap.content_desc': '模态、话题、时效性、质量都重要——且它们实时变化。2分钟前很精彩的直播现在可能已经冷了。',
+        'bmap.content_examples': '类型漂移、高光vs低谷、冷启动直播',
+        'bmap.platform_title': '平台（生态侧）',
+        'bmap.platform_desc': '平台目标是多目标，不是单一分数。只优化观看时长会损害礼物收入；只优化打赏会饿死新创作者。',
+        'bmap.platform_examples': '时长 vs 打赏 vs 公平性 vs 创作者扶持',
+        'bmap.conclusion': '生成式检索扩大了灵活性，也扩大了失败模式。可控性是使生成式推荐可部署的治理层。',
+        // Deployment Path
+        'deploy.title': '落地路径',
+        'deploy.intro': '如何从现有 pipeline 迁移到可控生成——无需一夜之间替换。',
+        'deploy.punchline': '不是替换现有 pipeline——而是逐步叠加可控性。',
+        'deploy.p1_title': '评估 & 重排',
+        'deploy.p1_desc': '保留现有 pipeline。添加可控性评估指标和约束重排作为后处理层。',
+        'deploy.p1_adds': '+ 评估框架 + 约束重排',
+        'deploy.p2_title': '有界生成',
+        'deploy.p2_desc': '在有界、低风险场景引入约束解码。在生产环境验证可控性，爆炸半径可控。',
+        'deploy.p2_adds': '+ 特定垂类的约束解码',
+        'deploy.p3_title': '扩大范围',
+        'deploy.p3_desc': '将生成扩展到属性感知控制，集成实时反馈闭环以覆盖更广场景。',
+        'deploy.p3_adds': '+ 属性感知生成 + 反馈闭环',
+        'deploy.p4_title': '全面可控生成',
+        'deploy.p4_desc': '在治理约束下进行多方利益优化。生成以完整可控性栈替代检索。',
+        'deploy.p4_adds': '+ 多方利益优化 + 治理框架',
         // Footer
         'footer.title': '可控推荐生成',
         'footer.subtitle': '3轴研究综述',
-        'footer.copy': '\u00a9 2026 \u00b7 最后更新 4月24日'
+        'footer.copy': '\u00a9 2026 \u00b7 最后更新 4月28日'
     }
 };
 

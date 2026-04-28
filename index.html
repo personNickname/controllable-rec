@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controllable Rec - Research Taxonomy</title>
-    <link rel="stylesheet" href="styles.css?v=20260427f">
+    <link rel="stylesheet" href="styles.css?v=20260428a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,6 +21,8 @@
             <a href="#mechanisms" data-i18n="nav.mechanisms">Mechanisms</a>
             <a href="#papers" data-i18n="nav.papers">Papers</a>
             <a href="#gaps" data-i18n="nav.gaps">Gaps</a>
+            <a href="#business" data-i18n="nav.business">Business</a>
+            <a href="#deployment" data-i18n="nav.deployment">Deployment</a>
             <a href="#priorities" data-i18n="nav.priorities">Priorities</a>
             <a href="#industry" data-i18n="nav.industry">Industry</a>
         </nav>
@@ -71,6 +73,7 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="thesis.title">Direction Thesis</h2>
                 <p class="section__intro" data-i18n="thesis.intro">Why controllability is THE bottleneck for generative recommendation — not generation quality.</p>
+                <div class="punchline" data-i18n="thesis.punchline">Generation moves selection into the model. Control becomes first-class.</div>
 
                 <div class="cards-grid">
                     <div class="card">
@@ -147,6 +150,7 @@
             <div class="container">
                 <h2 class="section__title" data-i18n="overview.title">Overview</h2>
                 <p class="section__intro" data-i18n="overview.intro">How can we steer what a generative recommender produces? This 3-axis taxonomy organizes control along orthogonal dimensions: what to steer (Target), how to deliver control (Interface), and how to implement it (Mechanism).</p>
+                <div class="punchline" data-i18n="overview.punchline">Without enforceable control, gen-rec cannot replace production pipelines.</div>
 
                 <div class="section__image">
                     <img src="images/taxonomy-cube.png" alt="3-Axis Taxonomy of Controllable Recommendation" loading="lazy">
@@ -814,15 +818,89 @@
 
             </div>
         </section>
+
+        <!-- Business Mapping Section -->
+        <section id="business" class="section">
+            <div class="container">
+                <h2 class="section__title" data-i18n="bmap.title">Business Mapping</h2>
+                <p class="section__intro" data-i18n="bmap.intro">Why controllability is a business requirement, not a research luxury.</p>
+                <div class="punchline" data-i18n="bmap.punchline">In livestream recommendation, uncontrolled generation doesn't just underperform — it fails on all three sides.</div>
+
+                <div class="overview-row overview-row--three">
+                    <div class="card">
+                        <h3 data-i18n="bmap.user_title">User (Demand)</h3>
+                        <p data-i18n="bmap.user_desc">Intent is implicit, dynamic, and conflicting. Users don't say what they want — they fatigue, switch between explore and exploit, hold multiple interests simultaneously.</p>
+                        <div class="gap__meta" style="margin-top:12px">
+                            <span data-i18n="bmap.user_examples">Fatigue detection, explore/exploit, multi-interest</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="bmap.content_title">Content (Supply)</h3>
+                        <p data-i18n="bmap.content_desc">Modality, topic, timeliness, and quality all matter — and they change in real-time. A stream that was exciting 2 minutes ago may be dead now.</p>
+                        <div class="gap__meta" style="margin-top:12px">
+                            <span data-i18n="bmap.content_examples">Genre drift, highlight vs lull, cold-start streams</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 data-i18n="bmap.platform_title">Platform (Ecosystem)</h3>
+                        <p data-i18n="bmap.platform_desc">Platform goals are multi-objective, not single-score. Optimizing watch time alone kills gift revenue; optimizing gifts alone starves new creators.</p>
+                        <div class="gap__meta" style="margin-top:12px">
+                            <span data-i18n="bmap.platform_examples">Duration vs gift vs fairness vs creator support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight" style="margin-top:24px" data-i18n="bmap.conclusion">Generative retrieval expands flexibility, but also expands failure modes. Controllability is the governance layer that makes generative rec deployable.</div>
+            </div>
+        </section>
+
+        <!-- Deployment Path Section -->
+        <section id="deployment" class="section section--alt">
+            <div class="container">
+                <h2 class="section__title" data-i18n="deploy.title">Deployment Path</h2>
+                <p class="section__intro" data-i18n="deploy.intro">How to get from current pipelines to controllable generation — without replacing anything overnight.</p>
+                <div class="punchline" data-i18n="deploy.punchline">Not replacing the existing pipeline — layering controllability on top, one phase at a time.</div>
+
+                <div class="phase-grid">
+                    <div class="phase-card">
+                        <span class="phase-card__number">1</span>
+                        <h4 data-i18n="deploy.p1_title">Evaluate &amp; Rerank</h4>
+                        <p data-i18n="deploy.p1_desc">Keep existing pipeline. Add controllability evaluation metrics and constrained reranking as a post-processing layer.</p>
+                        <span class="phase-adds" data-i18n="deploy.p1_adds">+ Evaluation framework + constrained rerank</span>
+                    </div>
+                    <div class="phase-card">
+                        <span class="phase-card__number">2</span>
+                        <h4 data-i18n="deploy.p2_title">Bounded Generation</h4>
+                        <p data-i18n="deploy.p2_desc">Introduce constrained decoding for bounded, low-risk scenarios. Validate controllability in production with limited blast radius.</p>
+                        <span class="phase-adds" data-i18n="deploy.p2_adds">+ Constrained decoding for specific verticals</span>
+                    </div>
+                    <div class="phase-card">
+                        <span class="phase-card__number">3</span>
+                        <h4 data-i18n="deploy.p3_title">Expand Scope</h4>
+                        <p data-i18n="deploy.p3_desc">Extend generation to attribute-aware control and integrate real-time feedback loop for broader coverage.</p>
+                        <span class="phase-adds" data-i18n="deploy.p3_adds">+ Attribute-aware generation + feedback loop</span>
+                    </div>
+                    <div class="phase-card">
+                        <span class="phase-card__number">4</span>
+                        <h4 data-i18n="deploy.p4_title">Full Controllable Gen</h4>
+                        <p data-i18n="deploy.p4_desc">Multi-stakeholder optimization under governance constraints. Generation replaces retrieval with full controllability stack.</p>
+                        <span class="phase-adds" data-i18n="deploy.p4_adds">+ Multi-stakeholder optimization + governance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="priorities" class="section">
             <div class="container">
                 <h2 class="section__title" data-i18n="pri.title">Strategic Priorities</h2>
                 <p class="section__intro" data-i18n="pri.intro">From research gaps to investment decisions: what to build, what to skip, and why this order.</p>
+                <div class="punchline" data-i18n="pri.punchline">Backbone commoditizes. Control stack differentiates.</div>
 
                 <div class="gaps-grid">
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority">P0</span>
                         <h3 data-i18n="pri.p0_biz_title">Business-Constrained Decoding</h3>
+                        <span class="p0-layer p0-layer--gate" data-i18n="pri.p0_biz_layer">Launch Gate</span>
                         <p data-i18n="pri.p0_biz_desc">Minimum bar for gen-rec to go online. Without business constraint enforcement, it cannot replace traditional pipelines. Technically mature, high feasibility.</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="pri.timeline_short">1-3 months</span>
@@ -833,6 +911,7 @@
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority">P0</span>
                         <h3 data-i18n="pri.p0_attr_title">Explicit Attribute Control</h3>
+                        <span class="p0-layer p0-layer--capability" data-i18n="pri.p0_attr_layer">Capability</span>
                         <p data-i18n="pri.p0_attr_desc">"Show items with attribute X and price < Y" — fundamental capability with near-total blank in generative retrieval. Blocks gen-rec from replacing traditional search.</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="pri.timeline_mid">3-6 months</span>
@@ -843,6 +922,7 @@
                     <div class="gap-card gap-card--high">
                         <span class="gap__priority">P0</span>
                         <h3 data-i18n="pri.p0_eval_title">Controllability Evaluation</h3>
+                        <span class="p0-layer p0-layer--foundation" data-i18n="pri.p0_eval_layer">Foundation</span>
                         <p data-i18n="pri.p0_eval_desc">Evidence infrastructure: control success rate, relevance tax, Pareto fronts, stability, rollback-ability. Without this, controllability stays at "looks like it works."</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--medium" data-i18n="pri.timeline_short">1-3 months</span>
@@ -883,7 +963,7 @@
                     <div class="gap-card gap-card--medium">
                         <span class="gap__priority">P1</span>
                         <h3 data-i18n="pri.p1_stake_title">Multi-Stakeholder Balance</h3>
-                        <p data-i18n="pri.p1_stake_desc">User-platform-creator balance is key to long-term ecosystem health. More of a mechanism design problem than a pure algorithm problem.</p>
+                        <p data-i18n="pri.p1_stake_desc">Generative selection may amplify exposure skew more than traditional ranking — creator churn from starvation is ecosystem-level risk. Multi-stakeholder balance is a launch governance condition, not a nice-to-have.</p>
                         <div class="gap__meta">
                             <span class="difficulty difficulty--high" data-i18n="pri.timeline_long">6-12 months</span>
                             <span data-i18n="pri.value_med">Medium Business Value</span>
@@ -947,10 +1027,10 @@
         <div class="container">
             <p class="footer__title" data-i18n="footer.title">Controllable Recommendation Generation</p>
             <p class="footer__subtitle" data-i18n="footer.subtitle">3-Axis Research Taxonomy</p>
-            <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 · Last updated April 24</p>
+            <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 · Last updated April 28</p>
         </div>
     </footer>
 
-    <script src="script.js?v=20260427i"></script>
+    <script src="script.js?v=20260428a"></script>
 </body>
 </html>

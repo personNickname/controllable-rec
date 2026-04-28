@@ -491,10 +491,14 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 8px;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .gap-card--high .gap__priority { color: var(--theme-danger); }
 .gap-card--medium .gap__priority { color: var(--theme-warning); }
+.gap__priority--low { background: rgba(107,114,128,0.15); color: var(--theme-text-muted); }
 
 .gap-card h3 {
   font-size: 1.1rem;

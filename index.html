@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controllable Rec - Research Taxonomy</title>
-    <link rel="stylesheet" href="styles.css?v=20260428a">
+    <link rel="stylesheet" href="styles.css?v=20260428b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@
                 <p class="section__intro" data-i18n="thesis.intro">Why controllability is THE bottleneck for generative recommendation — not generation quality.</p>
                 <div class="punchline" data-i18n="thesis.punchline">Generation moves selection into the model. Control becomes first-class.</div>
 
-                <div class="cards-grid">
+                <div class="overview-row overview-row--three">
                     <div class="card">
                         <h3 data-i18n="thesis.p1_title">P1: Non-Stationary Item Vocabulary</h3>
                         <p data-i18n="thesis.p1_desc">Gen-rec (TIGER, GPR, HSTU) assumes a fixed codebook — items encoded once, Semantic IDs stable. In livestream, the same stream is a different "item" every 30 seconds. Online training achieves &lt;5% error on dynamic items, but the mechanism is unexplained. Without understanding why, we can't control or guarantee it.</p>
@@ -127,7 +127,6 @@
                                 <tr><td><strong data-i18n="thesis.consume_val">📊 Consume Value</strong></td><td data-i18n="thesis.consume_def">Watch time, comments, follows</td><td data-i18n="thesis.consume_role">Engagement</td></tr>
                             </tbody>
                         </table>
-                        <div class="insight" data-i18n="thesis.metrics_insight">These replace CTR/conversion. Gift value is livestream-unique — a real-time, voluntary revenue signal reflecting entertainment quality.</div>
                     </div>
                 </div>
 
@@ -714,7 +713,7 @@
                     </div>
 
                     <div class="gap-card">
-                        <span class="gap__priority" style="background:var(--theme-text-muted)" data-i18n="gap.low_pri">Low Priority</span>
+                        <span class="gap__priority gap__priority--low" data-i18n="gap.low_pri">Low Priority</span>
                         <h3 data-i18n="gap.explain_title">Explainable Generation Path</h3>
                         <p data-i18n="gap.explain_desc">Least-covered area in literature — but deliberately deprioritized. High academic value, low business ROI. Useful as internal debugging tool only.</p>
                         <div class="gap__axes">any × Explainability × Conditioning</div>
@@ -805,7 +804,7 @@
                     </div>
 
                     <div class="gap-card">
-                        <span class="gap__priority" style="background:var(--theme-text-muted)">P2</span>
+                        <span class="gap__priority gap__priority--low">P2</span>
                         <h3 data-i18n="gap.l3_title">L3: Streamer Cold-Start Fairness</h3>
                         <p data-i18n="gap.l3_desc">New streamers have no gift history and no Semantic ID history. The "item" doesn't exist until the stream starts.</p>
                         <div class="gap__axes">Business × Post-Processing × Pref Opt</div>
@@ -971,7 +970,7 @@
                     </div>
 
                     <div class="gap-card">
-                        <span class="gap__priority" style="background:var(--theme-text-muted)">P2</span>
+                        <span class="gap__priority gap__priority--low">P2</span>
                         <h3 data-i18n="pri.p2_expl_title">Explainable Generation Paths</h3>
                         <p data-i18n="pri.p2_expl_desc">High academic value, low business ROI. Users need correct results, not Semantic ID path explanations. May have value as internal debugging tool only.</p>
                         <div class="gap__meta">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controllable Rec - Research Taxonomy</title>
-    <link rel="stylesheet" href="styles.css?v=20260428c">
+    <link rel="stylesheet" href="styles.css?v=20260428d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -820,33 +820,37 @@
         <section id="deployment" class="section section--alt">
             <div class="container">
                 <h2 class="section__title" data-i18n="deploy.title">Deployment Path</h2>
-                <p class="section__intro" data-i18n="deploy.intro">How to get from current pipelines to controllable generation — without replacing anything overnight.</p>
+                <p class="section__intro" data-i18n="deploy.intro">Each phase solves a concrete problem. No phase requires replacing the existing pipeline — each layers on top.</p>
                 <div class="punchline" data-i18n="deploy.punchline">Not replacing the existing pipeline — layering controllability on top, one phase at a time.</div>
 
                 <div class="phase-grid">
                     <div class="phase-card">
                         <span class="phase-card__number">1</span>
-                        <h4 data-i18n="deploy.p1_title">Evaluate &amp; Rerank</h4>
-                        <p data-i18n="deploy.p1_desc">Keep existing pipeline. Add controllability evaluation metrics and constrained reranking as a post-processing layer.</p>
-                        <span class="phase-adds" data-i18n="deploy.p1_adds">+ Evaluation framework + constrained rerank</span>
+                        <h4 data-i18n="deploy.p1_title">Prove Control Works</h4>
+                        <p class="phase-problem" data-i18n="deploy.p1_problem">Problem: Current reranking claims to "control" diversity and fairness, but no one can measure if it actually does.</p>
+                        <p data-i18n="deploy.p1_desc">Add CSR (control success rate) and relevance tax metrics to existing pipeline. Add business-constrained reranking: cold-start fairness, gift/consume balance as enforceable post-processing.</p>
+                        <span class="phase-adds" data-i18n="deploy.p1_adds">Unlocks: Evidence infrastructure — baseline for all future controllability</span>
                     </div>
                     <div class="phase-card">
                         <span class="phase-card__number">2</span>
-                        <h4 data-i18n="deploy.p2_title">Bounded Generation</h4>
-                        <p data-i18n="deploy.p2_desc">Introduce constrained decoding for bounded, low-risk scenarios. Validate controllability in production with limited blast radius.</p>
-                        <span class="phase-adds" data-i18n="deploy.p2_adds">+ Constrained decoding for specific verticals</span>
+                        <h4 data-i18n="deploy.p2_title">Recommend Moments, Not Streamers</h4>
+                        <p class="phase-problem" data-i18n="deploy.p2_problem">Problem (P1): System recommends "this streamer" but the stream was exciting 2 min ago and boring now. Static item IDs can't represent non-stationary content.</p>
+                        <p data-i18n="deploy.p2_desc">Deploy Segment SID — encode 30s snapshots as discrete tokens. Constrained decoding generates only valid (online) segments. High-light PRM scores each moment for recommendation timing.</p>
+                        <span class="phase-adds" data-i18n="deploy.p2_adds">Unlocks: Recommend the right moment, not just the right streamer → direct consume value uplift</span>
                     </div>
                     <div class="phase-card">
                         <span class="phase-card__number">3</span>
-                        <h4 data-i18n="deploy.p3_title">Expand Scope</h4>
-                        <p data-i18n="deploy.p3_desc">Extend generation to attribute-aware control and integrate real-time feedback loop for broader coverage.</p>
-                        <span class="phase-adds" data-i18n="deploy.p3_adds">+ Attribute-aware generation + feedback loop</span>
+                        <h4 data-i18n="deploy.p3_title">Use All Signals, Not Just In-Domain</h4>
+                        <p class="phase-problem" data-i18n="deploy.p3_problem">Problem (P2+P3): Livestream generation ignores short-video interests. Gift signals are too sparse (~1%) and too delayed (10-30 min) for preference optimization.</p>
+                        <p data-i18n="deploy.p3_desc">Cross-domain conditioning — leverage "living" content and short-video interest signals. Gift-weighted listwise DPO with delayed reward credit assignment to specific stream moments.</p>
+                        <span class="phase-adds" data-i18n="deploy.p3_adds">Unlocks: Cross-domain interest transfer + gift-based preference actually trainable</span>
                     </div>
                     <div class="phase-card">
                         <span class="phase-card__number">4</span>
-                        <h4 data-i18n="deploy.p4_title">Full Controllable Gen</h4>
-                        <p data-i18n="deploy.p4_desc">Multi-stakeholder optimization under governance constraints. Generation replaces retrieval with full controllability stack.</p>
-                        <span class="phase-adds" data-i18n="deploy.p4_adds">+ Multi-stakeholder optimization + governance</span>
+                        <h4 data-i18n="deploy.p4_title">Sustainable Ecosystem Generation</h4>
+                        <p class="phase-problem" data-i18n="deploy.p4_problem">Problem: Optimizing one metric hurts others. Gift-optimized generation starves new creators; engagement-only generation kills revenue.</p>
+                        <p data-i18n="deploy.p4_desc">Multi-stakeholder generation with governance constraints. Creator fairness as first-class generation constraint, not post-hoc reranking. Pareto-optimal balance across user, platform, and creator objectives.</p>
+                        <span class="phase-adds" data-i18n="deploy.p4_adds">Unlocks: Generation serves all stakeholders — ecosystem-level sustainability</span>
                     </div>
                 </div>
             </div>
@@ -993,6 +997,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260428b"></script>
+    <script src="script.js?v=20260428c"></script>
 </body>
 </html>

@@ -577,6 +577,11 @@ body {
   color: var(--theme-text-muted);
   margin-bottom: 8px;
 }
+.phase-card .phase-problem {
+  color: var(--theme-text);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
 .phase-card .phase-adds {
   font-size: 0.8rem;
   color: var(--theme-accent);

@@ -1,3 +1,11 @@
+// Collapsible toggle
+document.querySelectorAll('.collapsible__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        btn.nextElementSibling.classList.toggle('open');
+    });
+});
+
 // Tab switching
 document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -209,6 +217,7 @@ const translations = {
         // Papers section
         'papers.title': 'Paper Mapping',
         'papers.intro': '39 papers mapped to all 3 axes of the taxonomy: Target, Interface, and Mechanism. Highlighted rows indicate comprehensive coverage.',
+        'papers.toggle': 'Show Full Paper Matrix (39 papers)',
         // Gaps section
         'gaps.title': 'Research Gaps',
         'gaps.intro': 'Open problems framed using the 3-axis taxonomy (Target \u00d7 Interface \u00d7 Mechanism).',
@@ -598,6 +607,7 @@ const translations = {
         // Papers section
         'papers.title': '论文映射',
         'papers.intro': '39篇论文映射到分类体系的全部3个轴：目标、接口和机制。高亮行表示覆盖全面。',
+        'papers.toggle': '展开完整论文矩阵（39篇）',
         // Gaps section
         'gaps.title': '研究缺口',
         'gaps.intro': '基于3轴分类体系（目标 \u00d7 接口 \u00d7 机制）的开放问题。',

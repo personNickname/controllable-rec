@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controllable Rec - Research Taxonomy</title>
-    <link rel="stylesheet" href="styles.css?v=20260428b">
+    <link rel="stylesheet" href="styles.css?v=20260428c">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -566,8 +566,11 @@
                     <img src="images/paper-heatmap.png" alt="Paper Coverage: Target × Mechanism Matrix" loading="lazy">
                 </div>
 
-                <div class="table-wrapper">
-                    <table class="table paper-matrix">
+                <div class="collapsible">
+                    <button class="collapsible__toggle" data-i18n="papers.toggle">Show Full Paper Matrix (39 papers)</button>
+                    <div class="collapsible__content">
+                        <div class="table-wrapper">
+                            <table class="table paper-matrix">
                         <thead>
                             <tr>
                                 <th>Paper</th>
@@ -631,6 +634,8 @@
                             <tr><td>SIDE</td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
+                </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1030,6 +1035,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260428a"></script>
+    <script src="script.js?v=20260428b"></script>
 </body>
 </html>

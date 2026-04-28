@@ -24,7 +24,6 @@
             <a href="#business" data-i18n="nav.business">Business</a>
             <a href="#deployment" data-i18n="nav.deployment">Deployment</a>
             <a href="#priorities" data-i18n="nav.priorities">Priorities</a>
-            <a href="#industry" data-i18n="nav.industry">Industry</a>
         </nav>
         <div class="lang-switcher">
             <button class="lang-btn active" data-lang="en">EN</button>
@@ -512,47 +511,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Industry Section -->
-        <section id="industry" class="section">
-            <div class="container">
-                <h2 class="section__title" data-i18n="industry.title">Industry Grounding</h2>
-                <p class="section__intro" data-i18n="industry.intro">Two Kuaishou papers provide the industrial foundation — mapping taxonomy concepts to deployed systems serving 400M+ DAU.</p>
-
-                <div class="cards-grid cards-grid--two">
-                    <div class="card">
-                        <h3>Foresight <span style="font-weight:400;color:var(--theme-text-muted)">(WSDM'26)</span></h3>
-                        <p data-i18n="industry.foresight_desc">VQ-VAE Semantic ID for 30s livestream segments. Enables segment-level recall and recommendation.</p>
-                        <table class="table">
-                            <thead>
-                                <tr><th data-i18n="industry.tech">Technique</th><th data-i18n="industry.mapping">Taxonomy Mapping</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td data-i18n="industry.f_sid">30s Segment Semantic ID</td><td>Item × Conditioning</td></tr>
-                                <tr><td data-i18n="industry.f_next">Next-SID Prediction</td><td>Item × Constrained Decoding</td></tr>
-                                <tr><td data-i18n="industry.f_recall">Segment-level Recall</td><td>Item × Granularity (Fine)</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card">
-                        <h3>LiveForesighter <span style="font-weight:400;color:var(--theme-text-muted)">(400M DAU)</span></h3>
-                        <p data-i18n="industry.live_desc">High-light moment detection and future prediction. Deployed at scale for real-time stream quality scoring.</p>
-                        <table class="table">
-                            <thead>
-                                <tr><th data-i18n="industry.tech">Technique</th><th data-i18n="industry.mapping">Taxonomy Mapping</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td data-i18n="industry.l_highlight">High-light Detection</td><td>Item × Constrained Decoding</td></tr>
-                                <tr><td data-i18n="industry.l_predict">Future Prediction</td><td>Business × Conditioning</td></tr>
-                                <tr><td data-i18n="industry.l_rerank">Real-time Reranking</td><td>Business × Post-Processing</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="insight" data-i18n="industry.insight">LiveForesighter's high-light detection is essentially a real-time PRM — it scores "is this moment worth recommending?" at each time step, directly analogous to PROMISE's process reward model.</div>
             </div>
         </section>
 

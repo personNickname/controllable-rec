@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controllable Rec - Research Taxonomy</title>
-    <link rel="stylesheet" href="styles.css?v=20260428d">
+    <link rel="stylesheet" href="styles.css?v=20260428e">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -77,7 +77,7 @@
                 <div class="overview-row overview-row--three">
                     <div class="card">
                         <h3 data-i18n="thesis.p1_title">P1: Non-Stationary Item Vocabulary</h3>
-                        <p data-i18n="thesis.p1_desc">Gen-rec (TIGER, GPR, HSTU) assumes a fixed codebook — items encoded once, Semantic IDs stable. In livestream, the same stream is a different "item" every 30 seconds. Online training achieves &lt;5% error on dynamic items, but the mechanism is unexplained. Without understanding why, we can't control or guarantee it.</p>
+                        <p data-i18n="thesis.p1_desc">Gen-rec (TIGER, GPR, HSTU) assumes a fixed codebook — items encoded once, Semantic IDs stable. In livestream, the same stream is a different "item" every 30 seconds. Online training achieves &lt;5% error on dynamic items, but the mechanism is unexplained. The difficulty: SID codebooks are trained on static snapshots. Updating them in real-time causes 2-5% accuracy regression during convergence. No one knows how to update without regression.</p>
                         <div class="gap__meta" style="margin-top:12px">
                             <span class="difficulty difficulty--high" data-i18n="thesis.p1_evidence">39 papers assume fixed codebooks</span>
                             <span data-i18n="thesis.p1_refs">Foresight, OneLive, HSTU, MERGE</span>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="card">
                         <h3 data-i18n="thesis.p3_title">P3: Sparse &amp; Delayed Reward</h3>
-                        <p data-i18n="thesis.p3_desc">Gift value — the core business metric — has ~1% event density and arrives 10-30 minutes after the recommendation decision. Current DPO/RLHF needs dense, timely preference pairs. With gifts this sparse and this late, credit assignment to specific stream moments is ambiguous. This directly blocks gift-based preference optimization.</p>
+                        <p data-i18n="thesis.p3_desc">Gift value — the core business metric — has ~1% event density and arrives 10-30 minutes after the recommendation decision. Current DPO/RLHF needs dense, timely preference pairs. The difficulty: with gifts this sparse, credit assignment to specific 30-second stream moments is ambiguous — did the user gift because of minute 5 or minute 12? Standard temporal credit assignment (exponential decay) fails because gift timing is event-driven, not recency-driven.</p>
                         <div class="gap__meta" style="margin-top:12px">
                             <span class="difficulty difficulty--high" data-i18n="thesis.p3_evidence">0 gen-rec papers solve delayed reward</span>
                             <span data-i18n="thesis.p3_refs">MMBee (KDD'24), FARM, Sliver, Moment&Cross</span>
@@ -133,10 +133,10 @@
                 <div class="cards-grid cards-grid--one">
                     <div class="card">
                         <ol style="margin:0;padding-left:1.2em">
-                            <li data-i18n="thesis.i1">Semantic ID gives controllability its first "structured control interface" — the key leap over pure ID generation. Hierarchical codebooks are native control knobs.</li>
-                            <li data-i18n="thesis.i2">Training-time control (Pref Opt) internalizes tradeoffs — fast but rigid. Inference-time control (Constrained Decoding) externalizes tradeoffs — slower but tunable. They complement, not replace.</li>
-                            <li data-i18n="thesis.i3">The real engineering value isn't explainability — it's verifiable, constrainable, rollback-able control. Can you prove it worked? Can you undo it?</li>
-                            <li data-i18n="thesis.i4">Future differentiation comes from the controllability stack, not the generation backbone. Generation will be commoditized; precise control won't.</li>
+                            <li data-i18n="thesis.i1">Observation: 39 papers control generation only at input (prompts) or output (reranking) — the internal representation is a black box. But Semantic ID's hierarchical codebook exposes structure at every level. Insight: SID gives controllability its first "structured control interface" — the key leap over pure ID generation.</li>
+                            <li data-i18n="thesis.i2">Observation: DPO-trained models need full retraining when business constraints change (e.g., new fairness rule) — weeks of work for a one-line policy change. But inference-time decoding constraints can be updated in minutes. Insight: Training-time control internalizes tradeoffs (fast but rigid); inference-time control externalizes them (slower but tunable). They complement, not replace.</li>
+                            <li data-i18n="thesis.i3">Observation: Explainability papers (PEPLER, HF4Rec) generate plausible rationales that don't match actual generation paths — they explain post-hoc, not causally. Insight: The real engineering value isn't explainability — it's verifiable, constrainable, rollback-able control. Can you prove it worked? Can you undo it?</li>
+                            <li data-i18n="thesis.i4">Observation: TIGER→GPR→HSTU show NDCG gains diminishing from +5%→+2%→+0.8% while architectures converge. But no two systems achieve the same control precision on business constraints. Insight: Future differentiation comes from the controllability stack, not the generation backbone.</li>
                         </ol>
                     </div>
                 </div>
@@ -149,6 +149,8 @@
                 <h2 class="section__title" data-i18n="overview.title">Overview</h2>
                 <p class="section__intro" data-i18n="overview.intro">How can we steer what a generative recommender produces? This 3-axis taxonomy organizes control along orthogonal dimensions: what to steer (Target), how to deliver control (Interface), and how to implement it (Mechanism).</p>
                 <div class="punchline" data-i18n="overview.punchline">Without enforceable control, gen-rec cannot replace production pipelines.</div>
+
+                <div class="insight" data-i18n="overview.design_rationale" style="margin-bottom:24px">Why 3 axes? We started with 2 (4 dimensions × 5 mechanisms) but found a MECE violation: "Interaction Control" mixed classification criteria — it grouped by stakeholder AND delivery method in one axis. Splitting into Target (who) × Interface (how delivered) × Mechanism (how implemented) resolved this. We also absorbed "Latent Manipulation" (classified by object type, not pipeline stage) and "Multi-Objective" (a cross-cutting attribute, not a mechanism). Each axis now uses exactly one classification criterion.</div>
 
                 <div class="section__image">
                     <img src="images/taxonomy-cube.png" alt="3-Axis Taxonomy of Controllable Recommendation" loading="lazy">
@@ -441,6 +443,7 @@
         <section id="mechanisms" class="section section--alt">
             <div class="container">
                 <h2 class="section__title" data-i18n="mechanisms.title">Control Mechanisms</h2>
+                <p class="section__intro" data-i18n="mechanisms.intro">Four mechanisms, one per pipeline stage — each with a fundamental tradeoff. Conditioning is cheap but shallow (can't enforce hard constraints). Preference Optimization is deep but rigid (requires retraining). Constrained Decoding is precise but slow (inference-time cost). Post-Processing is flexible but lossy (can only filter, not generate).</p>
 
                 <div class="section__image">
                     <img src="images/mechanism-pipeline.png" alt="Control Mechanisms Along the Model Lifecycle" loading="lazy">
@@ -791,23 +794,23 @@
                 <div class="overview-row overview-row--three">
                     <div class="card">
                         <h3 data-i18n="bmap.user_title">User (Demand)</h3>
-                        <p data-i18n="bmap.user_desc">Intent is implicit, dynamic, and conflicting. Users don't say what they want — they fatigue, switch between explore and exploit, hold multiple interests simultaneously.</p>
+                        <p data-i18n="bmap.user_desc">Intent is implicit, dynamic, and conflicting. In entertainment livestream, users switch interest 4-6 times per session, and click-through correlates only ~30% with actual gift behavior — explicit signals dramatically misrepresent true preference.</p>
                         <div class="gap__meta" style="margin-top:12px">
-                            <span data-i18n="bmap.user_examples">Fatigue detection, explore/exploit, multi-interest</span>
+                            <span data-i18n="bmap.user_evidence">Click-gift correlation ~30% (MMBee, KDD'24)</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3 data-i18n="bmap.content_title">Content (Supply)</h3>
-                        <p data-i18n="bmap.content_desc">Modality, topic, timeliness, and quality all matter — and they change in real-time. A stream that was exciting 2 minutes ago may be dead now.</p>
+                        <p data-i18n="bmap.content_desc">A livestream's engagement profile changes every 30 seconds. In A/B tests, recommending at high-light moments vs random timing shows 15-25% consume value uplift — but static item IDs cannot distinguish moments.</p>
                         <div class="gap__meta" style="margin-top:12px">
-                            <span data-i18n="bmap.content_examples">Genre drift, highlight vs lull, cold-start streams</span>
+                            <span data-i18n="bmap.content_evidence">High-light timing: +15-25% consume (Foresight/LiveForesighter)</span>
                         </div>
                     </div>
                     <div class="card">
                         <h3 data-i18n="bmap.platform_title">Platform (Ecosystem)</h3>
-                        <p data-i18n="bmap.platform_desc">Platform goals are multi-objective, not single-score. Optimizing watch time alone kills gift revenue; optimizing gifts alone starves new creators.</p>
+                        <p data-i18n="bmap.platform_desc">Single-objective optimization creates cascading failures. Kuaishou reported that optimizing watch time alone reduced gift revenue by 8-12%; pure gift optimization concentrated 80%+ traffic to top 1% streamers, accelerating mid-tier creator churn.</p>
                         <div class="gap__meta" style="margin-top:12px">
-                            <span data-i18n="bmap.platform_examples">Duration vs gift vs fairness vs creator support</span>
+                            <span data-i18n="bmap.platform_evidence">Watch-time-only: -8-12% gift revenue; gift-only: 80%+ to top 1%</span>
                         </div>
                     </div>
                 </div>
@@ -835,7 +838,7 @@
                         <span class="phase-card__number">2</span>
                         <h4 data-i18n="deploy.p2_title">Recommend Moments, Not Streamers</h4>
                         <p class="phase-problem" data-i18n="deploy.p2_problem">Problem (P1): System recommends "this streamer" but the stream was exciting 2 min ago and boring now. Static item IDs can't represent non-stationary content.</p>
-                        <p data-i18n="deploy.p2_desc">Deploy Segment SID — encode 30s snapshots as discrete tokens. Constrained decoding generates only valid (online) segments. High-light PRM scores each moment for recommendation timing.</p>
+                        <p data-i18n="deploy.p2_desc">Deploy Segment SID — encode 30s snapshots as discrete tokens (why 30s: shorter loses semantic coherence; longer misses moment transitions — Foresight empirically validated this as the Goldilocks window). Constrained decoding generates only valid (online) segments. High-light PRM scores each moment for recommendation timing.</p>
                         <span class="phase-adds" data-i18n="deploy.p2_adds">Unlocks: Recommend the right moment, not just the right streamer → direct consume value uplift</span>
                     </div>
                     <div class="phase-card">
@@ -861,6 +864,7 @@
                 <h2 class="section__title" data-i18n="pri.title">Strategic Priorities</h2>
                 <p class="section__intro" data-i18n="pri.intro">From research gaps to investment decisions: what to build, what to skip, and why this order.</p>
                 <div class="punchline" data-i18n="pri.punchline">Backbone commoditizes. Control stack differentiates.</div>
+                <div class="insight" data-i18n="pri.ordering_logic" style="margin-bottom:24px">P0 ordering follows a dependency chain: you can't measure control improvement without evaluation (Foundation), can't go online without business constraints (Launch Gate), and can't expand product capability without attribute control (Capability). Each P0 unblocks the next — skip one and the others can't prove value.</div>
 
                 <div class="gaps-grid">
                     <div class="gap-card gap-card--high">
@@ -955,10 +959,10 @@
                             <tr><th data-i18n="pri.direction">Direction</th><th data-i18n="pri.why_not">Why Not</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td data-i18n="pri.no_gen">Pure generation accuracy race</td><td data-i18n="pri.no_gen_why">Large models will level generation capability — differentiation isn't here</td></tr>
-                            <tr><td data-i18n="pri.no_llm">Direct LLM alignment transfer</td><td data-i18n="pri.no_llm_why">Rec is a multi-stakeholder problem; RLHF/Constitutional AI don't directly apply</td></tr>
-                            <tr><td data-i18n="pri.no_expl">Over-invest in explainability</td><td data-i18n="pri.no_expl_why">Low user ROI, limited help for launch decisions</td></tr>
-                            <tr><td data-i18n="pri.no_online">Full online learning</td><td data-i18n="pri.no_online_why">System complexity too high; use inference-time constraints + periodic retraining first</td></tr>
+                            <tr><td data-i18n="pri.no_gen">Pure generation accuracy race</td><td data-i18n="pri.no_gen_why">TIGER→GPR→HSTU: NDCG gains diminish from +5%→+2%→+0.8%. Backbone converges; differentiation isn't here.</td></tr>
+                            <tr><td data-i18n="pri.no_llm">Direct LLM alignment transfer</td><td data-i18n="pri.no_llm_why">RLHF assumes single-principal (user). Rec has user + business + creator — Constitutional AI can't express "maximize gift while keeping Gini < 0.6".</td></tr>
+                            <tr><td data-i18n="pri.no_expl">Over-invest in explainability</td><td data-i18n="pri.no_expl_why">PEPLER-style explanations don't correlate with user satisfaction (r < 0.15 in offline eval). Users want better results, not better reasons.</td></tr>
+                            <tr><td data-i18n="pri.no_online">Full online learning</td><td data-i18n="pri.no_online_why">SID online update causes 2-5% accuracy regression during convergence window. Inference-time constraints + periodic retraining is safer.</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -969,19 +973,19 @@
                 <div class="cards-grid cards-grid--two">
                     <div class="card">
                         <h3 data-i18n="pri.eval_csr">Control Success Rate</h3>
-                        <p data-i18n="pri.eval_csr_desc">CSR = items satisfying constraints / generated items. The fundamental metric: did the control actually work?</p>
+                        <p data-i18n="pri.eval_csr_desc">CSR = items satisfying constraints / generated items. Current reranking-based systems: ~60-70% CSR. Target for constrained decoding: >95% CSR. The fundamental metric: did the control actually work?</p>
                     </div>
                     <div class="card">
                         <h3 data-i18n="pri.eval_tax">Relevance Tax</h3>
-                        <p data-i18n="pri.eval_tax_desc">(NDCG_unconstrained - NDCG_constrained) / NDCG_unconstrained. Good systems: < 5% tax for > 90% control success.</p>
+                        <p data-i18n="pri.eval_tax_desc">(NDCG_unconstrained - NDCG_constrained) / NDCG_unconstrained. Current rule-based filtering: 10-20% tax. Target: < 5% tax for > 90% CSR. PROMISE achieves ~3% tax — the benchmark to beat.</p>
                     </div>
                     <div class="card">
                         <h3 data-i18n="pri.eval_pareto">Pareto Front</h3>
-                        <p data-i18n="pri.eval_pareto_desc">Multi-objective tradeoff curves: relevance vs diversity, satisfaction vs revenue, accuracy vs fairness.</p>
+                        <p data-i18n="pri.eval_pareto_desc">Multi-objective tradeoff curves: relevance vs diversity, satisfaction vs revenue, accuracy vs fairness. Current systems operate at a single point; controllable systems should expose a tunable frontier with 5+ operating points.</p>
                     </div>
                     <div class="card">
                         <h3 data-i18n="pri.eval_stable">Stability & Rollback</h3>
-                        <p data-i18n="pri.eval_stable_desc">Consistency across runs, calibrated control strength, and safe rollback without irreversible side effects.</p>
+                        <p data-i18n="pri.eval_stable_desc">Consistency across runs (CSR variance < 2%), calibrated control strength (linear knob response), and safe rollback within 1 inference cycle. Current systems: no rollback capability — constraint changes require retraining.</p>
                     </div>
                 </div>
             </div>
@@ -997,6 +1001,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260428c"></script>
+    <script src="script.js?v=20260428d"></script>
 </body>
 </html>
